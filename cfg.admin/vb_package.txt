@@ -1,0 +1,21 @@
+wangj@wvb:~$ cat Documents/packages.txt
+apt-get apache2
+
+apt-get mysql-server
+mysql_secure_installation
+
+sudo apt-get install phpmyadmin php-mbstring php-gettext
+    sudo phpenmod mcrypt
+    sudo phpenmod mbstring
+
+systemctl restart apache2
+wangj@wvb:~$ cat Documents/vb_packages.txt
+apt-get install emacs
+
+// For copy/paste issue, PRIMARY and CLIPBOARD buffer
+apt-get install virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11
+xterm -ls -xrm 'XTerm*selectToClipboard: true'&
+apt-get install parcellite
+
+run parcellite -> preference -> Use Primvary(Selection) && Synchronize clipboards
+wangj@wvb:~$

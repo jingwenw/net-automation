@@ -1,0 +1,31 @@
+Replace apt-get mirror with wikimedia
+sed -i 's/http:\/\/.*ubuntu\.com/http:\/\/mirrors\.wikimedia\.org/' /etc/apt/sources.list
+
+super@Raw3:/etc/apt$ cat apt.conf
+Acquire::http::Proxy "http://192.168.1.2:3128";
+
+super@Raw3:/etc/apt/apt.conf.d$ cat 01proxy
+Acquire::http::Proxy "http://192.168.1.2:3128";
+Acquire::https::Proxy "http://192.168.1.2:3128";
+
+super@Raw3:/etc/apt/apt.conf.d$ cat 99fixbadproxy
+Acquire::http::Pipeline-Depth 0;
+Acquire::http::No-Cache true;
+Acquire::BrokenProxy true;
+
+super@Raw3:/etc/apt/apt.conf.d$ cat /etc/environment
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+HTTP_PROXY=http://192.168.1.2:3128
+HTTPS_PROXY=http://192.168.1.2:3128
+FTP_PROXY=
+NO_PROXY=localhost,127.0.0.1
+http_proxy=http://192.168.1.2:3128
+https_proxy=http://192.168.1.2:3128
+ftp_proxy=
+no_proxy=localhost,127.0.0.1
+
+$ cd /var/lib/apt
+$ sudo mv lists lists.old
+$ sudo mkdir -p lists/partial
+$ sudo apt-get update

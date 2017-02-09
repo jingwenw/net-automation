@@ -1,0 +1,24 @@
+=========================
+DevStack Component Timing
+=========================
+Total runtime         7853
+
+run_process            68
+test_with_retry         5
+apt-get-update         24
+pip_install           1580
+restart_apache_server  19
+wait_for_service       24
+git_timed             4007
+apt-get               192
+=========================
+
+
+
+This is your host IP address: 192.168.202.116
+This is your host IPv6 address: ::1
+Horizon is now available at http://192.168.202.116/dashboard
+Keystone is serving at http://192.168.202.116/identity/
+The default users are: admin and demo
+The password: stack
+stack@raw16:~/myRepos/devstack$
