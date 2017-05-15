@@ -7,7 +7,7 @@
 #----------------------------------------------------------------------------
 use Env;
 use Env qw(PATH HOME TERM);
-use lib ("$HOME/myRepos/packetier-tools");
+use lib ("$HOME/myRepos/net-automation");
 use IO::Handle;
 use File::Path;
 use POSIX ":sys_wait_h";
@@ -81,6 +81,7 @@ our $test_result_logfile = "";
 my $cfile = (split(/\//, $cfgfile))[-1];
 $::CFG_ROOT_DIR = $cfgfile;
 $::CFG_ROOT_DIR =~ s/$cfile//;
+$::CFG_ROOT_DIR = "." if ($::CFG_ROOT_DIR eq "");
 
 $::TQ_CONFIG{CFG_ROOT_DIR} = $::CFG_ROOT_DIR;
 

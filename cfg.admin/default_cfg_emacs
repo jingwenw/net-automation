@@ -1,0 +1,55 @@
+;;(load-file "~/.emacs.d/xcscope.el")
+;;(require 'xcscope)
+
+;; inhibit-startup-echo-area-message MUST be set to a hardcoded
+;; string of your login name
+
+(when window-system (set-frame-size (selected-frame) 80 30))
+
+(setq inhibit-startup-echo-area-message "james")
+(setq inhibit-startup-message t)
+(setq inhibit-startup-screen t)
+
+(setq c-basic-offset 4) ; indents 4 chars
+(setq tab-width 4)          ; and 4 char wide for TAB
+(setq indent-tabs-mode nil) ; And force use of spaces
+
+(display-time)
+(line-number-mode 1)
+(column-number-mode 1)
+
+(global-font-lock-mode t)
+(setq font-lock-maximum-size nil)
+
+(setq auto-mode-alist
+      (append '(
+               ("configure.in" . m4-mode)
+               ("\\.m4\\'" . m4-mode)
+               ("\\.am\\'" . makefile-mode))
+              auto-mode-alist))
+
+(add-hook 'dired-load-hook (function (lambda () (load "dired-x"))))
+(setq dired-omit-files-p t)
+
+;;(global-set-key [mouse-2] 'yank)
+
+
+(put 'upcase-region 'disabled nil)
+
+(defun my-c-mode-hook ()
+(setq c-basic-offset 4)
+(setq indent-tabls-mode nil)
+(c-set-offset 'case-label '+))
+(add-hook 'c-mode-hook 'my-c-mode-hook)
+
+(setq whitespace-space 'underline)
+
+(setq-default indent-tabs-mode nil)
+(setq-default show-trailing-whitespace t)
+
+;; (add-hook 'before-save-hook 'delete-trailing-whitespace)
+;; (add-hook 'before-save-hook 'whitespace-cleanup)
+
+(let ((d (make-display-table)))
+  (aset d 9 (vector ?> ?>))
+  (set-window-display-table nil d))
