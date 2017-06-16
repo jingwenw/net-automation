@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<TestConfig>
+
+	<Parameters>
+		<RunLongTestCases>true</RunLongTestCases>
+		<EmailRecipients>xli@tantalus.com, jtodd@tantalus.com, jahmed@tantalus.com, kfeng@tantalus.com, sdunn@tantalus.com, tscott@tantalus.com, acrawford@tantalus.com, spark@tantalus.com, charris@tantalus.com,  mma@tantalus.com, kbahi@tantalus.com, kchou@tantalus.com</EmailRecipients>
+		<Iterations>1</Iterations>
+		<!-- Specify which test suite below you wish to run -->
+		<WhichSuite>ProductRegression</WhichSuite>
+	</Parameters>
+
+	<ProductRegression>
+		<TestCase scriptName="Common.Product.Configuration.SetBid" retries="1" />
+		<TestCase scriptName="Common.Product.ERT.ActiveDiscoveryMeterTypes" />
+		<TestCase scriptName="Common.Product.ERT.BlackList" retries="1" />
+		<TestCase scriptName="Common.Product.ERT.BlackListPersistence" retries="1" />
+		<TestCase scriptName="Common.Product.ERT.DuplicateErt" retries="1" />
+		<TestCase scriptName="Common.Product.ERT.ErtInvalidIntervalConfiguration" retries="1" />
+		<TestCase scriptName="Common.Product.ERT.ErtValidIntervalConfiguration" retries="1" />
+		<TestCase scriptName="Common.Product.ERT.Interval100sFixedNetwork" retries="1" />
+		<TestCase scriptName="Common.Product.ERT.IntervalLegacy" />
+		<TestCase scriptName="Common.Product.ERT.MaxNumberOfDevicesInFiltering" retries="1" />
+		<TestCase scriptName="Common.Product.ERT.NoFilteringErt" retries="1" />
+		<TestCase scriptName="Common.Product.ERT.PortalFilteringSameErtWithDifferentReadings" />
+		<TestCase scriptName="Common.Product.ERT.RedundantErt" />
+		<TestCase scriptName="Common.Product.ERT.ClearBlackList" retries="1" />
+		<TestCase scriptName="Common.Product.ERT.SCMDataIntegrity" retries="1" />
+		<TestCase scriptName="Common.Product.ERT.SCMPDataIntegrity" retries="1" />
+                <!-- This script require user input when power on/off, so remove it for now:
+		     <TestCase scriptName="Common.Product.Reset.NonStickyRF.NonStickyMulticast" retries="1" />
+            	     <TestCase scriptName="Common.Product.Reset.NonStickyRF.NonStickyUnicast" retries="1" />
+                -->
+
+		<TestCase scriptName="Common.Product.Routing.DsaTable.MaxTableSize" retries="1" />
+		<TestCase scriptName="Common.Product.Routing.DsaTable.Default.DelShort" retries="1" />
+		<TestCase scriptName="Common.Product.Routing.DsaTable.ModifyTantalusBid" retries="1" />
+		<TestCase scriptName="Common.Product.Routing.DsaTable.ProcessMulticastMessage" retries="1" />
+		<TestCase scriptName="Common.Product.Association.WhiteBlackList" retries="1" />
+		<TestCase scriptName="Common.Product.Badger.OrionSetup" retries="1" />
+		<TestCase scriptName="Common.Product.Badger.Duplicates" retries="1" />
+		<TestCase scriptName="Common.Product.Badger.ScanTime" retries="1" />
+		<TestCase scriptName="Common.Product.Badger.BitWidths" retries="1" />
+		<TestCase scriptName="Common.Product.Badger.Startup" retries="1" />
+		<TestCase scriptName="Common.Product.Badger.InvalidConfig" retries="1" />
+	</ProductRegression>
+</TestConfig>

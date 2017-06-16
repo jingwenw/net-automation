@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!-- This file shows the build path for all active TCNG Unit tests -->
+<unit_test_list>
+  <ProductRegression type="Unit" gcovDataRoot="external_repos">
+
+  <TestCase scriptName="AMR">
+		<repo>TCNG_Middleware</repo>
+		<sub_dir>tantalus/applications/amr</sub_dir>
+		<makefile>amr_host_test.mk</makefile>
+		<executable>tantalus/binaries/amr/amr_host_test</executable>
+	</TestCase>  
+
+	<TestCase scriptName="BITX">
+		<repo>TCNG_Middleware</repo>
+		<sub_dir>tantalus/oam_mgr/bitx</sub_dir>
+		<makefile>bitx_host_test.mk</makefile>
+		<executable>tantalus/binaries/bitx/bitx_host_test</executable>
+	</TestCase>
+	<TestCase scriptName="GWM">
+		<repo>TCNG_Middleware</repo>
+		<sub_dir>tantalus/gateway_mgr/unit_tests</sub_dir>
+		<makefile>gwm_unit_test.mk</makefile>
+		<executable>tantalus/binaries/gwm/gwm_unit_test</executable>
+	</TestCase>
+        
+	<TestCase scriptName="MC">
+		<repo>TCNG_Middleware</repo>
+		<sub_dir>tantalus/meter_controller</sub_dir>
+		<makefile>mc_host_test.mk</makefile>
+		<executable>tantalus/binaries/meter_controller/mc_host_test</executable>
+	        </TestCase>
+
+	<TestCase scriptName="MC_DEMAND">
+		<repo>TCNG_Middleware</repo>
+		<sub_dir>tantalus/meter_controller</sub_dir>
+		<makefile>mc_demand_host_test.mk</makefile>
+		<executable>tantalus/binaries/meter_controller/mc_demand_host_test</executable>
+	</TestCase> 
+
+    <TestCase scriptName="OEMLM">
+		<repo>TCNG_Middleware</repo>
+		<sub_dir>tantalus/applications/oemlm</sub_dir>
+		<makefile>Makefile</makefile>
+		<executable>tantalus/binaries/oemlm/test_oemlm</executable>	
+	</TestCase>
+	<TestCase scriptName="OTAP">
+		<repo>TCNG_Middleware</repo>
+		<sub_dir>tantalus/oam_mgr/otap</sub_dir>
+		<makefile>otap_host_test.mk</makefile>
+		<executable>tantalus/binaries/otap/otap_host_test</executable>
+	</TestCase>
+
+        
+	<TestCase scriptName="PERT">
+		<repo>TCNG_Middleware</repo>
+		<sub_dir>tantalus/applications/pert</sub_dir>
+		<makefile>Makefile</makefile>
+		<executable>tantalus/binaries/pert/test_pert</executable>
+	</TestCase>
+
+<TestCase scriptName="RD">
+		<repo>TCNG_Middleware</repo>
+		<sub_dir>tantalus/applications/rd</sub_dir>
+		<makefile>Makefile</makefile>
+		<executable>tantalus/binaries/rd/test_rd</executable>
+	</TestCase>
+
+	<TestCase scriptName="TCNG_UTIL">
+		<repo>TCNG_Middleware</repo>
+		<sub_dir>tantalus/tcng_utils</sub_dir>
+		<makefile>tcng_utils_host_test.mk</makefile>
+		<executable>tantalus/binaries/tcng_utils/tcng_utils_host_test</executable>
+	        </TestCase>
+
+<TestCase scriptName="WLF">
+		<repo>TCNG_Middleware</repo>
+		<sub_dir>tantalus/meter_controller</sub_dir>
+		<makefile>mc_host_test_libwlf.mk</makefile>
+		<executable>tantalus/binaries/meter_controller/mc_host_test_libwlf</executable>
+	</TestCase>
+
+	</ProductRegression>
+</unit_test_list>
+

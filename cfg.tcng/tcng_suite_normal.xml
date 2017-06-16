@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<TestConfig>
+
+	<Parameters>
+		<RunLongTestCases>true</RunLongTestCases>
+		<EmailRecipients>xli@tantalus.com, jtodd@tantalus.com, jahmed@tantalus.com, kfeng@tantalus.com, sdunn@tantalus.com, tscott@tantalus.com, acrawford@tantalus.com, spark@tantalus.com, charris@tantalus.com,  mma@tantalus.com, kbahi@tantalus.com, kchou@tantalus.com</EmailRecipients>
+		<Iterations>1</Iterations>
+		<!-- Specify which test suite below you wish to run -->
+		<WhichSuite>ProductRegression</WhichSuite>
+	</Parameters>
+
+	<ProductRegression>
+      	  <TestCase scriptName="Common.Product.Configuration.LanMacParams.DefaultV3" retries="1" />
+
+          <!--
+		<TestCase scriptName="Common.Product.Reset.NonStickyRF.NonStickyMulticast" retries="1" />
+
+		    <TestCase scriptName="Common.Product.Badger.OrionSetup" retries="1" />
+		<TestCase scriptName="Common.Product.Reset.NonStickyRF.NonStickyUnicast" retries="1" />
+
+		<TestCase scriptName="Common.Product.Association.WhiteBlackList" retries="1" />
+
+		<TestCase scriptName="Common.Product.Badger.OrionSetup" retries="1" />
+		<TestCase scriptName="Common.Product.Routing.DsaTable.MinTableSize" retries="2" />
+                <TestCase scriptName="Common.Product.Association.Acquisition" retries="2" />
+-->
+
+                <TestCase scriptName="Common.Product.Configuration.SetBid" retries="1" />
+
+	</ProductRegression>
+</TestConfig>

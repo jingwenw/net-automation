@@ -1,0 +1,26 @@
+Extend lvm:
+
+12  pvs
+   13  vgs
+   14  lvs
+   15  pvs
+   16  df
+   17  fdisk /dev/sda
+   18  pvdisplay 
+   19  pvscan 
+   20  fdisk -l
+   21  pvcreate /dev/vdb
+   22  pvcreate /dev/sdb
+   23  pvs
+   24  vgs
+   25  vgextend vm1-vg /dev/sdb
+   26  vgs
+   27  lvs
+   28  lvextend --extents +100%FREE /dev/vm1-vg/root
+   29  lvs
+resize2fs /dev/vm1-vg/root
+
+Share file system with host:
+
+mkdir /mnt/HostWorkspace
+mount -t 9p -o trans=virtio,version=9p2000.L /HostWorkspace /mnt/HostWorkspace

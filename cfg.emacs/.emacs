@@ -4,7 +4,7 @@
 ;; inhibit-startup-echo-area-message MUST be set to a hardcoded
 ;; string of your login name
 
-(when window-system (set-frame-size (selected-frame) 80 80))
+(when window-system (set-frame-size (selected-frame) 80 50))
 
 (setq inhibit-startup-echo-area-message "jwang")
 (setq inhibit-startup-message t)
