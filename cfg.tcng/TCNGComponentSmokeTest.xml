@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<TestConfig>
+  <Parameters>
+    <RunLongTestCases>false</RunLongTestCases>
+    <Iterations>1</Iterations>
+    <TcNameIfPrefixed>1</TcNameIfPrefixed>
+    <!-- Specify which test suite below you wish to run -->
+    <EmailRecipients>tcng_product_dev@tantalus.com,</EmailRecipients>
+    <!--
+        ShortComponentTests: For test running, feel free to edit it.
+        ComponentTests:      For daily running.
+        LongComponentTests:  For weekend running.
+        ComponentSmokeTests: For Component Smoke test running
+    -->
+    <WhichSuite>ComponentSmokeTests</WhichSuite>
+
+  </Parameters>
+
+  <ComponentSmokeTests randomize="0">
+    <TestCase scriptName="Common.Component.Platform.SetProductTc1216" retries="2"/>
+    <TestCase scriptName="Common.Component.Middleware.GWM.AssociationResources" retries="2"/>
+    <TestCase scriptName="Common.Component.Mse.Mode0.Mac.TxMessages" retries="2"/>
+    <TestCase scriptName="Common.Component.Mse.Mode1.Mac.TxMessages" retries="2"/>
+    <TestCase scriptName="Common.Component.Apps.RD.Notifications" retries="2"/>
+    <TestCase scriptName="Common.Component.Middleware.PLM.Association.FirstBeacon" retries="2"/>
+    <TestCase scriptName="Common.Component.Middleware.PLM.Association.LanMacParamValueTests" retries="2"/>
+    <TestCase scriptName="Common.Component.Middleware.TCM.SetPqmAmrStatusMsgs" retries="2"/>
+    <TestCase scriptName="Common.Component.Apps.AMI.RealTimeBlurts" retries="2"/>
+    <TestCase scriptName="Common.Component.Middleware.BITX.DoubleStart" retries="2"/>
+    <TestCase scriptName="Common.Component.Apps.ERT.Discovery" retries="2"/>
+
+    <!-- TC1220Rd required for MC/RPD testing  -->
+    <TestCase scriptName="Common.Component.Platform.SetProductTc1220Rd" retries="2"/>
+    <TestCase scriptName="Common.Component.Middleware.MC.BasicProcessing" retries="2"/>
+    <TestCase scriptName="Common.Component.Middleware.RPD.Config" retries="2"/>
+<!--
+    <TestCase scriptName="Common.Component.Middleware.MC.PersistenceReset"/>
+-->
+  </ComponentSmokeTests>
+</TestConfig>

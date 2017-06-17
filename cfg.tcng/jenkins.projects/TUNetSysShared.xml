@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><project>
+  <actions/>
+  <description/>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <jenkins.model.BuildDiscarderProperty>
+      <strategy class="hudson.tasks.LogRotator">
+        <daysToKeep>5</daysToKeep>
+        <numToKeep>5</numToKeep>
+        <artifactDaysToKeep>-1</artifactDaysToKeep>
+        <artifactNumToKeep>-1</artifactNumToKeep>
+      </strategy>
+    </jenkins.model.BuildDiscarderProperty>
+  </properties>
+  <scm class="hudson.plugins.mercurial.MercurialSCM" plugin="mercurial@1.61">
+    <source>ssh://jwang@jwang//home/jwang/workspace/TCNG_Software/external_repos/TUNetSysShared</source>
+    <modules/>
+    <revisionType>BRANCH</revisionType>
+    <revision>default</revision>
+    <clean>false</clean>
+    <credentialsId/>
+    <disableChangeLog>false</disableChangeLog>
+  </scm>
+  <assignedNode>master</assignedNode>
+  <canRoam>false</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <authToken>TCNG_BUILD</authToken>
+  <triggers>
+    <hudson.triggers.SCMTrigger>
+      <spec/>
+      <ignorePostCommitHooks>false</ignorePostCommitHooks>
+    </hudson.triggers.SCMTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>whoami
+pwd
+
+echo "Goging to trigger Smoke test run on project of TCNG_Software"
+JENKINS_URL="http://10.1.3.178:8080"
+TOKEN_NAME=TCNG_BUILD
+
+#To get crumb
+CRUMB_CMD="wget -q --auth-no-challenge --user tcng --password Pa\$\$word1 --output-document -"
+CRUMB_URL='http://10.1.3.178:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)'
+CRUMB=`$CRUMB_CMD $CRUMB_URL`
+
+#Post with the crubm
+curl -X POST -u tcng:Pa\$\$word1 http://10.1.3.178:8080/job/TCNG_Software_Smoke_Private/buildWithParameters?token=TCNG_BUILD -H $CRUMB \
+--data-urlencode json='{"parameter": [{"name":"TCNG_IMAGE", "file":"image0"}, {"name":"TCNG_TESTSUITE", "value":"testsuite_comp_smoke.xml"}]}'
+#curl -X POST -u tcng:Pa\$\$word1 http://10.1.3.178:8080/job/TCNG_Software/build?token=TCNG_BUILD -H $CRUMB \
+#--data-urlencode json='{"parameter": [{"name":"TCNG_IMAGE", "file":"image0"}, {"name":"TCNG_TESTSUITE", "value":"testsuite_comp_smoke.xml"}]}'</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>

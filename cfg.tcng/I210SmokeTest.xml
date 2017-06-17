@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<TestConfig>
+
+	<Parameters>
+		<RunLongTestCases>true</RunLongTestCases>
+		<EmailRecipients>jwang@tantalus.com</EmailRecipients>
+		<Iterations>1</Iterations>
+                <TcNameIfPrefixed>1</TcNameIfPrefixed>
+		<!-- Specify which test suite below you wish to run -->
+		<WhichSuite>I210SmokeTest</WhichSuite>
+	</Parameters>
+
+	<I210SmokeTest randomize="0">
+	  <TestCase scriptName="Common.Product.Configuration.SetBid" retries="1" />
+	  <TestCase scriptName="Common.Product.Configuration.SetMeterInfo.ValidConfig" retries="2" />
+          <TestCase scriptName="Common.Product.Applications.AMI.ReadOnRequest.DemandRead" retries="2" />
+	  <TestCase scriptName="Common.Product.Applications.PQM.InvalidConfig" retries="2" />
+          <TestCase scriptName="Common.Product.InstallBeacon.Unassociated" retries="2" />
+          <TestCase scriptName="Common.Product.MessageProcessing.FuzzImmunity" retries="2" />
+	  <TestCase scriptName="Common.Product.Routing.RoutingSet.Default.NewAddShort" retries="2" />
+          <TestCase scriptName="Common.Product.Routing.UnicastRouting" retries="2" />
+	  <TestCase scriptName="Common.Product.Routing.ExplicitAck.ExplicitAckTransmitCount" retries="2" />
+	  <TestCase scriptName="Common.Product.Routing.ImplicitAck" retries="2" />
+          <TestCase scriptName="Common.Product.Time.PreserveTime" retries="2" />
+  	</I210SmokeTest>
+
+</TestConfig>

@@ -1,0 +1,31 @@
+#
+# For Phidget relays
+#
+ACTION=="add", \
+    SUBSYSTEM=="tty", \
+    ATTRS{idVendor}=="0403", \
+    ATTRS{idProduct}=="6001", \
+    ATTRS{serial}=="ST161314", \
+    SYMLINK+="ttyUSB.DBG"
+
+ACTION=="add", \
+    SUBSYSTEM=="tty", \
+    ATTRS{idVendor}=="0403", \
+    ATTRS{idProduct}=="6001", \
+    ATTRS{serial}=="ST161313", \
+    SYMLINK+="ttyUSB.QA"
+
+ACTION=="add", \
+    SUBSYSTEM=="tty", \
+    ATTRS{idVendor}=="0403", \
+    ATTRS{idProduct}=="6001", \
+    ATTRS{serial}=="ST161322", \
+    SYMLINK+="ttyUSB.SCI"
+
+ACTION=="add", \
+    SUBSYSTEM=="tty", \
+    ATTRS{idVendor}=="0403", \
+    ATTRS{idProduct}=="6001", \
+    ATTRS{serial}=="ST161327", \
+    SYMLINK+="ttyUSB.METRO"
+

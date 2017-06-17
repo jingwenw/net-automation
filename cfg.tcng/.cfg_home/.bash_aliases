@@ -1,0 +1,27 @@
+alias auto='cd ~/myRepos/net-automation'
+alias qa='cd ~/workspace/TCNG_QA'
+alias ssh2smokey2='ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -i /home/tcng/.ssh/tantalus_user_id_rsa.priv tantalus@10.1.0.186'
+alias ssh2smokey='ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -i /home/tcng/.ssh/tantalus_user_id_rsa.priv tantalus@10.1.0.144'
+alias smokey='ssh smokey@smokey'
+alias smokey2='ssh smokey2@smokey2'
+alias smokey3='ssh smokey3@smokey3'
+
+alias smokey3v1='ssh trobot@smokey3v1'
+alias smokey3v2='ssh trobot@smokey3v2'
+alias smokey3v3='ssh trobot@smokey3v3'
+alias smokey3v4='ssh trobot@smokey3v4'
+
+alias smokey2v1='ssh trobot@smokey2v1'
+alias smokey2v2='ssh trobot@smokey2v2'
+alias smokey2v3='ssh trobot@smokey2v3'
+alias smokey2v4='ssh trobot@smokey2v4'
+
+alias myhost='ssh jwang@jwang'
+alias trobot='ssh trobot@trobot'
+
+alias buildserver='ssh buildmaster@tcngbuildserver'
+alias buildagent1='ssh buildagent@fwbuildvm1'
+alias buildagent2='ssh buildagent@fwbuildvm2'
+alias buildagent3='ssh buildagent@fwbuildvm3'
+alias buildagent4='ssh buildagent@fwbuildvm4'
+alias sniffy='ssh sniffy@sniffy'

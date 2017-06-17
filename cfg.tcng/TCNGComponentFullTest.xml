@@ -1,0 +1,313 @@
+<?xml version="1.0"?>
+<TestConfig>
+	<Parameters>
+		<RunLongTestCases>true</RunLongTestCases>
+		<Iterations>1</Iterations>
+                <TcNameIfPrefixed>1</TcNameIfPrefixed>
+		<!-- Specify which test suite below you wish to run -->
+		<EmailRecipients>tcng_product_dev@tantalus.com,</EmailRecipients>
+<!--
+                Updated on Dec. 18, 2017
+                ShortComponentTests: For test running, feel free to edit it.
+		ComponentTests:      For daily running.
+		LongComponentTests:  For weekend running.
+-->
+		<WhichSuite>ComponentTestsFull</WhichSuite>
+
+	</Parameters>
+
+	<!-- ################################################################ -->
+	<!-- ##   Do Not Randomize Tests!! Some run on different products  ## -->
+	<!-- ################################################################ -->
+	<ComponentTestsFull randomize="0">
+
+		<!-- ############################################# -->
+		<!-- ##   These Tests must all be for TC-1216   ## -->
+		<!-- ############################################# -->
+
+		<TestCase scriptName="Common.Component.Platform.SetProductTc1216"/>
+
+		<TestCase scriptName="Common.Component.Middleware.GWM.AcLoss"/>
+		<TestCase scriptName="Common.Component.Middleware.GWM.AssociationResources"/>
+		<TestCase scriptName="Common.Component.Middleware.GWM.EvStartAqFlag"/>
+		<TestCase scriptName="Common.Component.Middleware.GWM.OperationStatus"/>
+		<TestCase scriptName="Common.Component.Middleware.GWM.Ping"/>
+		<TestCase scriptName="Common.Component.Middleware.GWM.PortalRecovery"/>
+		<TestCase scriptName="Common.Component.Middleware.GWM.Prioritization"/>
+		<TestCase scriptName="Common.Component.Middleware.GWM.SetPortalAuthentication"/>
+		<TestCase scriptName="Common.Component.Middleware.GWM.TspMessages"/>
+		<TestCase scriptName="Common.Component.Middleware.GWM.TspTime"/>
+		<TestCase scriptName="Common.Component.Middleware.GWM.TxStress"/>
+		<TestCase scriptName="Common.Component.Middleware.GWM.RxSq"/>
+		<TestCase scriptName="Common.Component.Middleware.GWM.UnackedUplinkCount"/>
+
+		<TestCase scriptName="Common.Component.Middleware.PLM.Association.FilterRcvdMsgLanMode"/>
+		<TestCase scriptName="Common.Component.Middleware.PLM.Association.FilterRcvdMsgRoutingDepth"/>
+		<TestCase scriptName="Common.Component.Middleware.PLM.Association.FirstBeacon"/>
+		<TestCase scriptName="Common.Component.Middleware.PLM.Association.ForceReassociate_Blacklisted_LanMode"/>
+		<TestCase scriptName="Common.Component.Middleware.PLM.Association.ForceReassociate_Whitelisted_LanMode"/>
+		<TestCase scriptName="Common.Component.Middleware.PLM.Association.ImplicitForceReassociation"/>
+		<TestCase scriptName="Common.Component.Middleware.PLM.Association.LanMacParamValueTests"/>
+		<TestCase scriptName="Common.Component.Middleware.PLM.Association.NewTc_DeployedAs_NonPortal"/>
+		<TestCase scriptName="Common.Component.Middleware.PLM.Association.NewTc_DeployedAs_NonPortal_InDeadZone"/>
+		<TestCase scriptName="Common.Component.Middleware.PLM.Association.NewTc_DeployedAs_Portal"/>
+		<TestCase scriptName="Common.Component.Middleware.PLM.Association.NonPortalAssociated_ForceReassociation"/>
+		<TestCase scriptName="Common.Component.Middleware.PLM.Association.NonPortalAssociating_AllCandidatesFail"/>
+		<TestCase scriptName="Common.Component.Middleware.PLM.Association.NonPortalAssociating_BcastSetLanMac"/>
+		<TestCase scriptName="Common.Component.Middleware.PLM.Association.NonPortalAssocLostNoCandidatesLeft"/>
+		<TestCase scriptName="Common.Component.Middleware.PLM.Association.NonPortalAssocLostWithCandidatesLeft"/>
+		<TestCase scriptName="Common.Component.Middleware.PLM.Association.NonPortalTc_RelocatedAs_PortalTc"/>
+		<TestCase scriptName="Common.Component.Middleware.PLM.Association.NonPortalXxx_To_NewPortal"/>
+		<TestCase scriptName="Common.Component.Middleware.PLM.Association.NonPortalXxx_To_PrevPortal"/>
+		<TestCase scriptName="Common.Component.Middleware.PLM.Association.PortalAssociated_AssociationLost"/>
+		<TestCase scriptName="Common.Component.Middleware.PLM.Association.PortalAssociated_ForceReassociation"/>
+		<TestCase scriptName="Common.Component.Middleware.PLM.Association.PortalAssociating_FailedAttempt"/>
+		<TestCase scriptName="Common.Component.Middleware.PLM.Association.PortalTc_RelocatedAs_NonPortalTc"/>
+		<TestCase scriptName="Common.Component.Middleware.PLM.Association.PortalTc_RelocatedTo_NewRT"/>
+		<TestCase scriptName="Common.Component.Middleware.PLM.Association.PowerUp_NonPortalAssociated"/>
+		<TestCase scriptName="Common.Component.Middleware.PLM.Association.PowerUp_PortalAssociated"/>
+		<TestCase scriptName="Common.Component.Middleware.PLM.Association.RedLED"/>
+		<TestCase scriptName="Common.Component.Middleware.PLM.Association.StickyReassociation"/>
+		<TestCase scriptName="Common.Component.Middleware.PLM.Association.TcStartup_BidSelection"/>
+	        <TestCase scriptName="Common.Component.Middleware.PLM.InstallBeacon.Generation"/>
+        	<TestCase scriptName="Common.Component.Middleware.PLM.MessageProcessing.TcStartupV2"/>
+		<TestCase scriptName="Common.Component.Middleware.PLM.MessageProcessing.TcStartupV2_InitialTime"/>
+		<!--
+		<TestCase scriptName="Common.Component.Middleware.PLM.Uplink.NonPortalLoseUplink"/>
+		<TestCase scriptName="Common.Component.Middleware.PLM.Uplink.NonPortalUplinkRecovery"/>
+		<TestCase scriptName="Common.Component.Middleware.PLM.Uplink.PortalLoseUplink"/>
+		<TestCase scriptName="Common.Component.Middleware.PLM.Uplink.PortalUplinkRecovery"/>
+        -->
+        <TestCase scriptName="Common.Component.Middleware.TCM.DemandReadMsgs"/>
+		<TestCase scriptName="Common.Component.Middleware.TCM.MeterInfoMsgs"/>
+		<TestCase scriptName="Common.Component.Middleware.TCM.ResetMsgs"/>
+		<TestCase scriptName="Common.Component.Middleware.TCM.SetAmrPqmSyncMsg"/>
+		<TestCase scriptName="Common.Component.Middleware.TCM.SetPqmAmrStatusMsgs"/>
+		<TestCase scriptName="Common.Component.Middleware.TCM.SetTcParamsMsgs"/>
+		<TestCase scriptName="Common.Component.Middleware.TCM.SetTimezone"/>
+
+
+		<TestCase scriptName="Common.Component.Apps.PQM.PqmComponentConfig"/>
+		<TestCase scriptName="Common.Component.Apps.PQM.PqmOverview" />
+		<TestCase scriptName="Common.Component.Apps.PQM.PqmOutageReport" knownIssue="CR-165" />
+		<TestCase scriptName="Common.Component.Apps.PQM.PqmReportAlignment" knownIssue="ITN-XXXXX"/>
+		<TestCase scriptName="Common.Component.Apps.PQM.PqmReports" knownIssue="ITN-XXXXX"/>
+		<TestCase scriptName="Common.Component.Apps.PQM.PqmSagSwellQualification" knownIssue="ITN-XXXXX"/>
+		<TestCase scriptName="Common.Component.Apps.PQM.PqmStartup" knownIssue="ITN-XXXXX"/>
+		<TestCase scriptName="Common.Component.Apps.PQM.PqmVoltageRegulation" knownIssue="ITN-XXXXX"/>
+
+		<!--
+		<TestCase scriptName="Common.Component.Apps.AMI.Overview"/>
+		<TestCase scriptName="Common.Component.Apps.AMI.ReadOnRequest"/>
+        -->
+		<TestCase scriptName="Common.Component.Apps.AMI.RealTimeBlurts"/>
+		<TestCase scriptName="Common.Component.Apps.AMI.RelativeToRealtimeMax"/>
+
+		<TestCase scriptName="Common.Component.Middleware.BITX.Abort"	             />
+		<TestCase scriptName="Common.Component.Middleware.BITX.BlockRemediation"	 />
+		<TestCase scriptName="Common.Component.Middleware.BITX.BlockSize"	         />
+		<TestCase scriptName="Common.Component.Middleware.BITX.DoubleStart"			 />
+		<TestCase scriptName="Common.Component.Middleware.BITX.ConcurrentTransfers"	 />
+		<TestCase scriptName="Common.Component.Middleware.BITX.TransferTableFull"      />
+		<TestCase scriptName="Common.Component.Middleware.BITX.DownstreamTransfer"	 />
+		<TestCase scriptName="Common.Component.Middleware.BITX.InvalidTransfers"	 />
+		<TestCase scriptName="Common.Component.Middleware.BITX.ResponseFields"	     />
+		<TestCase scriptName="Common.Component.Middleware.BITX.UpstreamTransfer"	 />
+		<TestCase scriptName="Common.Component.Middleware.BITX.ResumeTransfer"	     />
+		<TestCase scriptName="Common.Component.Middleware.BITX.IncommunicadoTimeout" />
+
+		<TestCase scriptName="Common.Component.Middleware.BITX.DownstreamTransferSFT"       />
+
+		<TestCase scriptName="Common.Component.Middleware.OTAP.Abort"/>
+	        <TestCase scriptName="Common.Component.Middleware.OTAP.CorruptFile"/>
+		<TestCase scriptName="Common.Component.Middleware.OTAP.OTAPUnlocking"/>
+		<TestCase scriptName="Common.Component.Middleware.OTAP.OTAPWrongDevice"/>
+		<TestCase scriptName="Common.Component.Middleware.OTAP.ReceiveManifest"/>
+		<TestCase scriptName="Common.Component.Middleware.OTAP.ResponseFields"/>
+		<TestCase scriptName="Common.Component.Middleware.OTAP.Shutdown"/>
+		<TestCase scriptName="Common.Component.Middleware.OTAP.BadImage"/>
+
+		<TestCase scriptName="Common.Component.Middleware.OTAP.OTAPRestart"/>
+		<TestCase scriptName="Common.Component.Middleware.OTAP.OTAPCancelAndRestart"/>
+
+		<!--
+		<TestCase scriptName="Common.Component.Middleware.OTAP.FullUpgrade"/>
+		<TestCase scriptName="Common.Component.Middleware.OTAP.OTAPCancelAndRestart"/>
+		<TestCase scriptName="Common.Component.Middleware.OTAP.OTAPRestart"/>
+		<TestCase scriptName="Common.Component.Middleware.OTAP.OTAPRollbackLock"/>
+		-->
+
+		<TestCase scriptName="Common.Component.Mse.Mode0.Mac.TxMessages"     />
+        <TestCase scriptName="Common.Component.Mse.Mode0.Mac.HIIP"           />
+        <TestCase scriptName="Common.Component.Mse.Mode0.Mac.TxTiming"       />
+        <TestCase scriptName="Common.Component.Mse.Mode0.TX.Time"            />
+        <TestCase scriptName="Common.Component.Mse.Mode0.TX.BufferPool"      />
+        <TestCase scriptName="Common.Component.Mse.Mode0.TX.TimePacket"      />
+
+        <TestCase scriptName="Common.Component.Mse.Mode1.Mac.TxMessages"     />
+        <TestCase scriptName="Common.Component.Mse.Mode1.Mac.HIIP"           />
+        <TestCase scriptName="Common.Component.Mse.Mode1.Mac.WheelTiming"    />
+        <TestCase scriptName="Common.Component.Mse.Mode1.Mac.TxTiming"       />
+        <TestCase scriptName="Common.Component.Mse.Mode1.TX.Time"            />
+        <TestCase scriptName="Common.Component.Mse.Mode1.TX.BufferPool"      />
+        <TestCase scriptName="Common.Component.Mse.Mode1.TX.TimePacket"      />
+
+	<TestCase scriptName="Common.Component.Mse.MacTrng.TrngRandom0to9"  />
+	<TestCase scriptName="Common.Component.Mse.Mode3.Mac.SlotInit"      />
+	<TestCase scriptName="Common.Component.Mse.ModeV.Mac.SlotInit"      />
+
+		<TestCase scriptName="Common.Component.Apps.RD.SetStateFromNetwork"/>
+		<TestCase scriptName="Common.Component.Apps.RD.GetState"/>
+		<TestCase scriptName="Common.Component.Apps.RD.NotificationOutage"/>
+		<TestCase scriptName="Common.Component.Apps.RD.SetStateLocal"/>
+		<TestCase scriptName="Common.Component.Apps.RD.Notifications"/>
+		<TestCase scriptName="Common.Component.Apps.RD.SetStateRelativeTime"/>
+		<TestCase scriptName="Common.Component.Apps.RD.SetStateThenNotify"/>
+		<TestCase scriptName="Common.Component.Apps.RD.NetworkTimeNothingToDo"/>
+
+		<TestCase scriptName="Common.Component.Apps.RD.SetStateFromNetwork_V2"/>
+                <TestCase scriptName="Common.Component.Apps.RD.GetState_V2"/>
+		<TestCase scriptName="Common.Component.Apps.RD.SetStateLocal_V2"/>
+
+		<!--
+		<TestCase scriptName="TC-1X20.Component.Apps.RD.ReconnectAttempt"/>
+		<TestCase scriptName="TC-1X20.Component.Apps.RD.ArmAttempt"/>
+		<TestCase scriptName="TC-1X20.Component.Apps.RD.ArmExpiry"/>
+		<TestCase scriptName="TC-1X20.Component.Apps.RD.ArmLoadSideVoltage"/>
+		-->
+
+		<TestCase scriptName="Common.Component.Apps.ERT.SetOemConfMsgs"/>
+	        <TestCase scriptName="Common.Component.Apps.ERT.SmibFilter"/>
+		<TestCase scriptName="Common.Component.Apps.ERT.FullTableScheduler"/>
+		<TestCase scriptName="Common.Component.Apps.ERT.LegacyReadings"/>
+		<TestCase scriptName="Common.Component.Apps.ERT.100sReadings"/>
+		<TestCase scriptName="Common.Component.Apps.ERT.AuthorizeLegacy"/>
+		<TestCase scriptName="Common.Component.Apps.ERT.Authorize100s"/>
+		<TestCase scriptName="Common.Component.Apps.ERT.SupportLevel"/>
+		<TestCase scriptName="Common.Component.Apps.ERT.Discovery"/>
+		<TestCase scriptName="Common.Component.Apps.ERT.DiscoveryTOH"/>
+		<TestCase scriptName="Common.Component.Apps.ERT.100sTrackingTable"/>
+		<TestCase scriptName="Common.Component.Apps.ERT.LinkStats"/>
+		<TestCase scriptName="Common.Component.Apps.ERT.LegacyTrackingTable"/>
+		<TestCase scriptName="Common.Component.Apps.ERT.TCNGOutageTracking"/>
+		<TestCase scriptName="Common.Component.Apps.ERT.DiscoveryFrequencies"/>
+		<TestCase scriptName="Common.Component.Apps.ERT.NimSchedMsgIntercept"/>
+		<!--TestCase scriptName="Common.Component.Apps.ERT.LegacyTypeDiscovery"/--> <!-- This mode is not in use after 114x ERT change -->
+		<TestCase scriptName="Common.Component.Apps.ERT.LegacyTypeLimits"/>
+		<!--TestCase scriptName="Common.Component.Apps.ERT.ArbitrationROH"/-->  <!-- This mode is not in use after 114x ERT change -->
+		<TestCase scriptName="Common.Component.Apps.ERT.Blacklist"/>
+		<TestCase scriptName="Common.Component.Apps.ERT.LegacyInterceptTOH"/>
+		<TestCase scriptName="Common.Component.Apps.ERT.MaxSmibQueue"/>
+		<TestCase scriptName="Common.Component.Apps.ERT.100sDailyReadFallback"/>
+		<TestCase scriptName="Common.Component.Apps.ERT.InstantTampers"/>
+		<TestCase scriptName="Common.Component.Apps.ERT.PortalFiltering"/>
+		<TestCase scriptName="Common.Component.Apps.ERT.100sInterceptImpact"/>
+	        <TestCase scriptName="Common.Component.Apps.ERT.DailyReadSCMP"/>
+		<!--TestCase scriptName="Common.Component.Apps.ERT.DemoReadings"/-->	<!-- This mode is not in use after 114x ERT change -->
+	        <TestCase scriptName="Common.Component.Apps.ERT.RestoreTrackingTables"/>
+		<TestCase scriptName="Common.Component.Apps.ERT.TimeSync"/>
+	        <TestCase scriptName="Common.Component.Apps.ERT.ScheduleIntervalSCM"/>
+	        <TestCase scriptName="Common.Component.Apps.ERT.45DaysHourlyStorage"/>
+		<TestCase scriptName="Common.Component.Apps.ERT.ClearTables"/>
+	        <TestCase scriptName="Common.Component.Apps.ERT.DiscoveryCoverage"/>
+	        <TestCase scriptName="Common.Component.Apps.ERT.InjectedReadingsTx"/>
+		<TestCase scriptName="Common.Component.Apps.ERT.TrackingTableUpdatePersistence"/>
+
+
+	        <!--TestCase scriptName="Common.Component.Middleware.UnitTests"/-->
+
+		<!-- ####################################################### -->
+		<!-- ##   These Tests must all be for TC-1220-RD          ## -->
+		<!-- ####################################################### -->
+	    <TestCase scriptName="Common.Component.Platform.SetProductTc1220Rd"/>
+
+	    <TestCase scriptName="Common.Component.Middleware.MC.BadMetrology"/>
+	    <TestCase scriptName="Common.Component.Middleware.MC.BasicProcessing"/>
+	    <TestCase scriptName="Common.Component.Middleware.MC.DeltaAlgorithm"/>
+	    <TestCase scriptName="Common.Component.Middleware.MC.ForceSave"/>
+	    <TestCase scriptName="Common.Component.Middleware.MC.SerialProcessing"/>
+
+	    <TestCase scriptName="Common.Component.Middleware.RPD.RelativeTimeCal"/>
+	    <TestCase scriptName="Common.Component.Middleware.RPD.Config"/>
+	    <TestCase scriptName="Common.Component.Middleware.RPD.RecurrentCal"/>
+
+		<TestCase scriptName="Common.Component.Middleware.WLF.WearLevellingFlashStressTest"/>
+
+	    <TestCase scriptName="Common.Component.Middleware.MC.PersistenceReset"/>
+	    <TestCase scriptName="Common.Component.Middleware.MC.ConsumptionReset"/>
+	    <TestCase scriptName="Common.Component.Middleware.MC.DemandRegisterProcessor.RpdTestVectors"/>
+
+		<!-- ####################################################### -->
+
+
+
+        <!--
+		<TestCase scriptName="Common.Component.Middleware.BITX.BlockCache"/>
+		<TestCase scriptName="Common.Component.Middleware.BITX.SingleFileTransfer"/>
+		<TestCase scriptName="Common.Component.Middleware.BITX.IncommunicadoTimeout"/>
+		<TestCase scriptName="Common.Component.Middleware.BITX.FailToAllDevices"/>
+		<TestCase scriptName="Common.Component.Middleware.BITX.MessageQueueFull"/>
+		<TestCase scriptName="Common.Component.Middleware.BITX.NCFail"/>
+		<TestCase scriptName="Common.Component.Middleware.BITX.Reassociation.BlockTransmission"/>
+		<TestCase scriptName="Common.Component.Middleware.BITX.Reassociation.CGtoNG"/>
+		<TestCase scriptName="Common.Component.Middleware.BITX.Reassociation.ControlRemediation"/>
+		<TestCase scriptName="Common.Component.Middleware.BITX.Reassociation.NGtoCG"/>
+		<TestCase scriptName="Common.Component.Middleware.BITX.Reassociation.NGtoNG"/>
+		<TestCase scriptName="Common.Component.Middleware.BITX.RTFail"/>
+		<TestCase scriptName="Common.Component.Middleware.BITX.SingleFileDuringBroadcast"/>
+		<TestCase scriptName="Common.Component.Middleware.OTAP.CGLanManyDevices"/>
+		-->
+
+
+        <!--  Run this by itself
+		<TestCase scriptName="Common.Component.Middleware.OTAP.FullUpgrade"/>
+		<TestCase scriptName="Common.Component.Middleware.OTAP.OTAP_oneImage"/>
+		<TestCase scriptName="Common.Component.Middleware.OTAP.VerifyAutoRollback"/>
+		<TestCase scriptName="Common.Component.Middleware.OTAP.MixedSystemMode3Upgrade"/>
+		<TestCase scriptName="Common.Component.Middleware.OTAP.MixedSystemMultipleLANs"/>
+		<TestCase scriptName="Common.Component.Middleware.OTAP.MultiImage"/>
+		<TestCase scriptName="Common.Component.Middleware.OTAP.NormalOTAPStart"/>
+		<TestCase scriptName="Common.Component.Middleware.OTAP.OAM_FLASH_REBOOT"/>
+		<TestCase scriptName="Common.Component.Middleware.OTAP.OTAPCancelAndRestart"/>
+		<TestCase scriptName="Common.Component.Middleware.OTAP.OTAPRestart"/>
+		<TestCase scriptName="Common.Component.Middleware.OTAP.OTAPRollbackLock"/>
+		<TestCase scriptName="Common.Component.Middleware.OTAP.Overlapping"/>
+		<TestCase scriptName="Common.Component.Middleware.OTAP.OverlappingTSPandTCNG"/>
+		<TestCase scriptName="Common.Component.Middleware.OTAP.Pause"/>
+		<TestCase scriptName="Common.Component.Middleware.OTAP.ProductId"/>
+		<TestCase scriptName="Common.Component.Middleware.OTAP.Scheduling"/>
+		<TestCase scriptName="Common.Component.Middleware.OTAP.SingleCGLan"/>
+        -->
+
+
+
+        <!--
+        <TestCase scriptName="TC-1X16.Component.PulseCount"                  runtime="long"/>
+		<TestCase scriptName="TC-1210.Component.PulseCount"                  runtime="long" />
+        <TestCase scriptName="TC-1X16.Component.MetrologyInterface"          runtime="long"/>
+
+		<TestCase scriptName="Common.Component.Platform.Bootloader.DetectCorruptImage"/>
+		<TestCase scriptName="Common.Component.Platform.Bootloader.Otap"/>
+		<TestCase scriptName="Common.Component.Platform.Bootloader.RmaMode"/>
+		<TestCase scriptName="Common.Component.Platform.BootTime"/>
+		<TestCase scriptName="Common.Component.Platform.Flash.Stress"/>
+		<TestCase scriptName="Common.Component.Platform.ProductImage.BuildImage"/>
+		<TestCase scriptName="Common.Component.Platform.ProductImage.ProgramImage"/>
+		<TestCase scriptName="Common.Component.Platform.ProductImage.VerifyManifest"/>
+		<TestCase scriptName="Common.Component.Platform.Security.EnableRemoteRoot"/>
+		<TestCase scriptName="Common.Component.Platform.Usage.FreeMemMargin"/>
+		<TestCase scriptName="TestFramework.Tool.PowerCycle"/>
+		<TestCase scriptName="TestFramework.Tool.Deploy.QaProxy"/>
+        -->
+
+</ComponentTestsFull>
+<!--################################################################################ -->
+<ShortComponentTests randomize="0">
+
+</ShortComponentTests>
+<!--################################################################################ -->
+<LongComponentTests randomize="0">
+
+</LongComponentTests>
+
+</TestConfig>

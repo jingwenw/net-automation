@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<TestConfig>
+	<Parameters>
+		<RunLongTestCases>true</RunLongTestCases>
+		<EmailRecipients>jwang@tantalus.com</EmailRecipients>
+		<Iterations>1</Iterations>
+                <TcNameIfPrefixed>1</TcNameIfPrefixed>
+		<!-- Specify which test suite below you wish to run -->
+		<WhichSuite>ProductSmokeTest</WhichSuite>
+	</Parameters>
+
+	<ProductSmokeTest>
+		<TestCase scriptName="Common.Product.Configuration.SetBid" retries="2" />
+		<TestCase scriptName="Common.Product.Configuration.SetMeterInfo.Default" retries="2" />
+		<TestCase scriptName="Common.Product.Configuration.LanMacParams.Default" retries="2" />
+		<TestCase scriptName="Common.Product.Configuration.MeterSerial.Default" retries="2" />
+		<TestCase scriptName="Common.Product.Configuration.NetStatus.Default" retries="2" />
+		<TestCase scriptName="Common.Product.Configuration.PqmAmrStatus.Default" retries="2" />
+		<TestCase scriptName="Common.Product.Configuration.TCParams.QueryTCParams" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.AMI.ReadOnRequest.Default" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.AMI.Blurt" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.PQM.PqmReport" retries="2" />
+                <TestCase scriptName="Common.Product.Applications.OutageRestoralTestSuite.Blink" retries="2" />
+                <TestCase scriptName="Common.Product.Association.Acquisition" retries="2" />
+		<TestCase scriptName="Common.Product.Association.DisableOptimizations" retries="2" />
+		<TestCase scriptName="Common.Product.Badger.Startup" retries="2" />
+		<TestCase scriptName="Common.Product.NetMetering.NetValidConfig" retries="2"/>
+		<TestCase scriptName="Common.Product.ReturnedMessage.BroadcastMsg" retries="2" />
+                <TestCase scriptName="Common.Product.Routing.DsaTable.Default.AddShort" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.NewAddShortEmptyTable" retries="2" />
+</ProductSmokeTest>
+</TestConfig>

@@ -1,0 +1,46 @@
+# ~/.hgrc
+
+
+[extensions]
+
+hgext.rebase =
+strip =
+fsmonitor =
+hgext.rebase =
+hgext.extdiff =
+color =
+purge =
+transplant =
+
+[trusted]
+
+groups = hg
+
+
+[web]
+
+push_ssl=False
+
+allow_push=*
+
+
+[ui]
+
+username = James Wang <jwang@tantalus.com>
+
+merge = diff  # Override vimdiff
+
+[trusted]
+groups = hg
+
+[web]
+push_ssl=False
+allow_push=*
+
+
+[extdiff]
+cmd.vdiff = meld
+
+[merge-tools]
+meld.args=$local $base $other $output
+

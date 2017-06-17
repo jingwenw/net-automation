@@ -1,0 +1,321 @@
+
+Discarded input sections
+
+ .data          0x00000000        0x0 obj/isp_cstartup.o
+ .bss           0x00000000        0x0 obj/isp_cstartup.o
+ .text          0x00000000        0x0 obj/main.o
+ .data          0x00000000        0x0 obj/main.o
+ .text          0x00000000        0x0 obj/efc.o
+ .data          0x00000000        0x0 obj/efc.o
+ .bss           0x00000000        0x0 obj/efc.o
+ .text.EFC_EnableIt
+                0x00000000        0x0 obj/efc.o
+ .text.EFC_StartCommand
+                0x00000000        0x0 obj/efc.o
+ .text          0x00000000        0x0 obj/eefc.o
+ .data          0x00000000        0x0 obj/eefc.o
+ .bss           0x00000000        0x0 obj/eefc.o
+ .text          0x00000000        0x0 obj/flashd_efc.o
+ .data          0x00000000        0x0 obj/flashd_efc.o
+ .text          0x00000000        0x0 obj/flashd_eefc.o
+ .data          0x00000000        0x0 obj/flashd_eefc.o
+ .bss           0x00000000        0x0 obj/flashd_eefc.o
+ .text          0x00000000        0x0 obj/board_memories.o
+ .data          0x00000000        0x0 obj/board_memories.o
+ .bss           0x00000000        0x0 obj/board_memories.o
+ .text.BOARD_RemapFlash
+                0x00000000        0x0 obj/board_memories.o
+ .text          0x00000000        0x0 obj/board_lowlevel.o
+ .data          0x00000000        0x0 obj/board_lowlevel.o
+ .bss           0x00000000        0x0 obj/board_lowlevel.o
+ .text          0x00000000        0x0 obj/string.o
+ .data          0x00000000        0x0 obj/string.o
+ .bss           0x00000000        0x0 obj/string.o
+ .text.memset   0x00000000        0x0 obj/string.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+romcodesram      0x00200000         0x00001000         w !xr
+sram             0x00201000         0x00007000         w !xr
+flash            0x00100000         0x00040000         xr
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD obj/isp_cstartup.o
+LOAD obj/main.o
+LOAD obj/efc.o
+LOAD obj/eefc.o
+LOAD obj/flashd_efc.o
+LOAD obj/flashd_eefc.o
+LOAD obj/board_memories.o
+LOAD obj/board_lowlevel.o
+LOAD obj/string.o
+                0x00000000                . = ALIGN (0x4)
+
+.fixed          0x00201000      0x7f4
+                0x00201000                _sfixed = .
+ *(.text*)
+ .text          0x00201000       0xf0 obj/isp_cstartup.o
+                0x00201000                entry
+ .text.main     0x002010f0      0x168 obj/main.o
+                0x002010f0                main
+ .text.EFC_SetMasterClock
+                0x00201258        0x4 obj/efc.o
+                0x00201258                EFC_SetMasterClock
+ .text.EFC_DisableIt
+                0x0020125c        0x8 obj/efc.o
+                0x0020125c                EFC_DisableIt
+ .text.EFC_SetEraseBeforeProgramming
+                0x00201264       0x1c obj/efc.o
+                0x00201264                EFC_SetEraseBeforeProgramming
+ .text.EFC_TranslateAddress
+                0x00201280       0x30 obj/efc.o
+                0x00201280                EFC_TranslateAddress
+ .text.EFC_ComputeAddress
+                0x002012b0       0x18 obj/efc.o
+                0x002012b0                EFC_ComputeAddress
+ .text.EFC_PerformCommand
+                0x002012c8       0x58 obj/efc.o
+                0x002012c8                EFC_PerformCommand
+ .text.EFC_GetStatus
+                0x00201320        0x4 obj/efc.o
+                0x00201320                EFC_GetStatus
+ .text.FLASHD_IsLocked
+                0x00201324       0x78 obj/flashd_efc.o
+                0x00201324                FLASHD_IsLocked
+ .text.FLASHD_Erase
+                0x0020139c       0x20 obj/flashd_efc.o
+                0x0020139c                FLASHD_Erase
+ .text.ComputeLockRange
+                0x002013bc       0x70 obj/flashd_efc.o
+ .text.FLASHD_Unlock
+                0x0020142c       0x80 obj/flashd_efc.o
+                0x0020142c                FLASHD_Unlock
+ .text.FLASHD_Lock
+                0x002014ac       0x80 obj/flashd_efc.o
+                0x002014ac                FLASHD_Lock
+ .text.FLASHD_Write
+                0x0020152c      0x134 obj/flashd_efc.o
+                0x0020152c                FLASHD_Write
+ .text.FLASHD_Initialize
+                0x00201660       0x38 obj/flashd_efc.o
+                0x00201660                FLASHD_Initialize
+ .text.BOARD_GetRemap
+                0x00201698       0x24 obj/board_memories.o
+ .text.BOARD_RemapRam
+                0x002016bc       0x24 obj/board_memories.o
+                0x002016bc                BOARD_RemapRam
+ .text.BOARD_ConfigureFlash48MHz
+                0x002016e0       0x10 obj/board_memories.o
+                0x002016e0                BOARD_ConfigureFlash48MHz
+ .text.defaultSpuriousHandler
+                0x002016f0        0x4 obj/board_lowlevel.o
+                0x002016f0                defaultSpuriousHandler
+ .text.defaultFiqHandler
+                0x002016f4        0x4 obj/board_lowlevel.o
+                0x002016f4                defaultFiqHandler
+ .text.defaultIrqHandler
+                0x002016f8        0x4 obj/board_lowlevel.o
+                0x002016f8                defaultIrqHandler
+ .text.LowLevelInit
+                0x002016fc       0xc8 obj/board_lowlevel.o
+                0x002016fc                LowLevelInit
+ .text.memcpy   0x002017c4       0x30 obj/string.o
+                0x002017c4                memcpy
+ *(.rodata*)
+ *(.data)
+                0x002017f4                . = ALIGN (0x4)
+                0x002017f4                _efixed = .
+
+.glue_7         0x00100000        0x0
+ .glue_7        0x00100000        0x0 obj/isp_cstartup.o
+ .glue_7        0x00100000        0x0 obj/main.o
+ .glue_7        0x00100000        0x0 obj/efc.o
+ .glue_7        0x00100000        0x0 obj/eefc.o
+ .glue_7        0x00100000        0x0 obj/flashd_efc.o
+ .glue_7        0x00100000        0x0 obj/flashd_eefc.o
+ .glue_7        0x00100000        0x0 obj/board_memories.o
+ .glue_7        0x00100000        0x0 obj/board_lowlevel.o
+ .glue_7        0x00100000        0x0 obj/string.o
+
+.glue_7t        0x00100000        0x0
+ .glue_7t       0x00100000        0x0 obj/isp_cstartup.o
+ .glue_7t       0x00100000        0x0 obj/main.o
+ .glue_7t       0x00100000        0x0 obj/efc.o
+ .glue_7t       0x00100000        0x0 obj/eefc.o
+ .glue_7t       0x00100000        0x0 obj/flashd_efc.o
+ .glue_7t       0x00100000        0x0 obj/flashd_eefc.o
+ .glue_7t       0x00100000        0x0 obj/board_memories.o
+ .glue_7t       0x00100000        0x0 obj/board_lowlevel.o
+ .glue_7t       0x00100000        0x0 obj/string.o
+
+.vfp11_veneer   0x00100000        0x0
+ .vfp11_veneer  0x00100000        0x0 obj/isp_cstartup.o
+ .vfp11_veneer  0x00100000        0x0 obj/main.o
+ .vfp11_veneer  0x00100000        0x0 obj/efc.o
+ .vfp11_veneer  0x00100000        0x0 obj/eefc.o
+ .vfp11_veneer  0x00100000        0x0 obj/flashd_efc.o
+ .vfp11_veneer  0x00100000        0x0 obj/flashd_eefc.o
+ .vfp11_veneer  0x00100000        0x0 obj/board_memories.o
+ .vfp11_veneer  0x00100000        0x0 obj/board_lowlevel.o
+ .vfp11_veneer  0x00100000        0x0 obj/string.o
+
+.v4_bx          0x00100000        0x0
+ .v4_bx         0x00100000        0x0 obj/isp_cstartup.o
+ .v4_bx         0x00100000        0x0 obj/main.o
+ .v4_bx         0x00100000        0x0 obj/efc.o
+ .v4_bx         0x00100000        0x0 obj/eefc.o
+ .v4_bx         0x00100000        0x0 obj/flashd_efc.o
+ .v4_bx         0x00100000        0x0 obj/flashd_eefc.o
+ .v4_bx         0x00100000        0x0 obj/board_memories.o
+ .v4_bx         0x00100000        0x0 obj/board_lowlevel.o
+ .v4_bx         0x00100000        0x0 obj/string.o
+
+.relocate       0x00200000        0x0 load address 0x002017f4
+                0x00200000                . = ALIGN (0x4)
+                0x00200000                _srelocate = .
+ *(.vectors)
+                0x00200000                . = ALIGN (0x4)
+                0x00200000                _erelocate = .
+
+.zero           0x002017f4      0x104
+                0x002017f4                _szero = .
+ *(.bss)
+ .bss           0x002017f4        0x4 obj/main.o
+ .bss           0x002017f8      0x100 obj/flashd_efc.o
+                0x002018f8                . = ALIGN (0x4)
+                0x002018f8                _ezero = .
+                0x00208000                _sstack = 0x208000
+                0x002018f8                end = .
+OUTPUT(bin/isp-flash-at91sam7a3.elf elf32-littlearm)
+
+.ARM.attributes
+                0x00000000       0x24
+ .ARM.attributes
+                0x00000000       0x14 obj/isp_cstartup.o
+ .ARM.attributes
+                0x00000014       0x2e obj/main.o
+ .ARM.attributes
+                0x00000042       0x2e obj/efc.o
+ .ARM.attributes
+                0x00000070       0x2c obj/eefc.o
+ .ARM.attributes
+                0x0000009c       0x2e obj/flashd_efc.o
+ .ARM.attributes
+                0x000000ca       0x2c obj/flashd_eefc.o
+ .ARM.attributes
+                0x000000f6       0x2e obj/board_memories.o
+ .ARM.attributes
+                0x00000124       0x2e obj/board_lowlevel.o
+ .ARM.attributes
+                0x00000152       0x2e obj/string.o
+
+.debug_line     0x00000000      0x66f
+ .debug_line    0x00000000       0x61 obj/isp_cstartup.o
+ .debug_line    0x00000061       0x8f obj/main.o
+ .debug_line    0x000000f0      0x113 obj/efc.o
+ .debug_line    0x00000203       0x1d obj/eefc.o
+ .debug_line    0x00000220      0x189 obj/flashd_efc.o
+ .debug_line    0x000003a9       0x1d obj/flashd_eefc.o
+ .debug_line    0x000003c6       0xe2 obj/board_memories.o
+ .debug_line    0x000004a8       0xea obj/board_lowlevel.o
+ .debug_line    0x00000592       0xdd obj/string.o
+
+.debug_info     0x00000000     0x1507
+ .debug_info    0x00000000       0xa2 obj/isp_cstartup.o
+ .debug_info    0x000000a2      0x37c obj/main.o
+ .debug_info    0x0000041e      0x345 obj/efc.o
+ .debug_info    0x00000763       0x30 obj/eefc.o
+ .debug_info    0x00000793      0x55b obj/flashd_efc.o
+ .debug_info    0x00000cee       0x30 obj/flashd_eefc.o
+ .debug_info    0x00000d1e      0x1ad obj/board_memories.o
+ .debug_info    0x00000ecb      0x4b5 obj/board_lowlevel.o
+ .debug_info    0x00001380      0x187 obj/string.o
+
+.debug_abbrev   0x00000000      0x655
+ .debug_abbrev  0x00000000       0x14 obj/isp_cstartup.o
+ .debug_abbrev  0x00000014       0xf0 obj/main.o
+ .debug_abbrev  0x00000104      0x149 obj/efc.o
+ .debug_abbrev  0x0000024d       0x28 obj/eefc.o
+ .debug_abbrev  0x00000275      0x173 obj/flashd_efc.o
+ .debug_abbrev  0x000003e8       0x28 obj/flashd_eefc.o
+ .debug_abbrev  0x00000410       0xd0 obj/board_memories.o
+ .debug_abbrev  0x000004e0       0xa7 obj/board_lowlevel.o
+ .debug_abbrev  0x00000587       0xce obj/string.o
+
+.debug_aranges  0x00000000      0x188
+ .debug_aranges
+                0x00000000       0x20 obj/isp_cstartup.o
+ .debug_aranges
+                0x00000020       0x20 obj/main.o
+ .debug_aranges
+                0x00000040       0x60 obj/efc.o
+ .debug_aranges
+                0x000000a0       0x50 obj/flashd_efc.o
+ .debug_aranges
+                0x000000f0       0x38 obj/board_memories.o
+ .debug_aranges
+                0x00000128       0x38 obj/board_lowlevel.o
+ .debug_aranges
+                0x00000160       0x28 obj/string.o
+
+.debug_frame    0x00000000      0x2f4
+ .debug_frame   0x00000000       0x30 obj/main.o
+ .debug_frame   0x00000030       0xc8 obj/efc.o
+ .debug_frame   0x000000f8       0xe0 obj/flashd_efc.o
+ .debug_frame   0x000001d8       0x68 obj/board_memories.o
+ .debug_frame   0x00000240       0x70 obj/board_lowlevel.o
+ .debug_frame   0x000002b0       0x44 obj/string.o
+
+.debug_loc      0x00000000      0xb94
+ .debug_loc     0x00000000      0x1d2 obj/main.o
+ .debug_loc     0x000001d2      0x1d7 obj/efc.o
+ .debug_loc     0x000003a9      0x5b6 obj/flashd_efc.o
+ .debug_loc     0x0000095f       0x5d obj/board_memories.o
+ .debug_loc     0x000009bc       0x8f obj/board_lowlevel.o
+ .debug_loc     0x00000a4b      0x149 obj/string.o
+
+.debug_pubnames
+                0x00000000      0x261
+ .debug_pubnames
+                0x00000000       0x1b obj/main.o
+ .debug_pubnames
+                0x0000001b       0xdc obj/efc.o
+ .debug_pubnames
+                0x000000f7       0x80 obj/flashd_efc.o
+ .debug_pubnames
+                0x00000177       0x58 obj/board_memories.o
+ .debug_pubnames
+                0x000001cf       0x6a obj/board_lowlevel.o
+ .debug_pubnames
+                0x00000239       0x28 obj/string.o
+
+.debug_str      0x00000000      0x89e
+ .debug_str     0x00000000      0x244 obj/main.o
+                                0x27d (size before relaxing)
+ .debug_str     0x00000244      0x132 obj/efc.o
+                                0x24e (size before relaxing)
+ .debug_str     0x00000376       0x26 obj/eefc.o
+                                 0x9f (size before relaxing)
+ .debug_str     0x0000039c      0x182 obj/flashd_efc.o
+                                0x2e8 (size before relaxing)
+ .debug_str     0x0000051e       0x2a obj/flashd_eefc.o
+                                 0xa3 (size before relaxing)
+ .debug_str     0x00000548       0xe8 obj/board_memories.o
+                                0x16f (size before relaxing)
+ .debug_str     0x00000630      0x1f5 obj/board_lowlevel.o
+                                0x2dc (size before relaxing)
+ .debug_str     0x00000825       0x79 obj/string.o
+                                0x191 (size before relaxing)
+
+.comment        0x00000000      0x158
+ .comment       0x00000000       0x2b obj/main.o
+ .comment       0x0000002b       0x2b obj/efc.o
+ .comment       0x00000056       0x2b obj/eefc.o
+ .comment       0x00000081       0x2b obj/flashd_efc.o
+ .comment       0x000000ac       0x2b obj/flashd_eefc.o
+ .comment       0x000000d7       0x2b obj/board_memories.o
+ .comment       0x00000102       0x2b obj/board_lowlevel.o
+ .comment       0x0000012d       0x2b obj/string.o

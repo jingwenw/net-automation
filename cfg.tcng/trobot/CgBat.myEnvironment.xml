@@ -1,0 +1,59 @@
+<EnvironmentConfig>
+
+        <!--
+            CgBat's Test Configuration
+         -->
+        <tunet>
+                <!--ErtFrequency>911200000</ErtFrequency-->
+                <ErtFrequency>919400000</ErtFrequency>
+                <Locations>
+                        <!-- Repositories on my local machine -->
+                        <HgRepositoryNative>
+                                <TCNG_QA>/home/tunet/workspace/TCNG_QA</TCNG_QA>
+                                <ASIC>/home/tunet/workspace/TCNG_ASIC</ASIC>
+                                <Middleware>/home/tunet/workspace/TCNG_Middleware</Middleware>
+                                <Platform>/home/tunet/workspace/TCNG_Software</Platform>
+                                <NS>/home/tunet/workspace/TUNetSysShared</NS>
+                        </HgRepositoryNative>
+
+                        <BuildServerMountPoint>/tmp/buildserver</BuildServerMountPoint>
+                        <NfsShare>/tmp/nfs</NfsShare>
+                </Locations>
+                <EthernetDeviceName>eth0</EthernetDeviceName>
+                <MiddlewareComponentDebug>1</MiddlewareComponentDebug>
+
+                <!-- TunetComm Configuration -->
+                <TunetCommPorts>
+                        <!--Sci>/dev/ttyS2</Sci Previous port -->
+                        <Sci>/dev/ttyUSB3</Sci>
+                        <Rf900>/dev/ttyS1</Rf900>
+                        <Ert>/dev/ttyUSB1</Ert> <!--channel 87 in use-->
+                </TunetCommPorts>
+
+                <!-- Group of Device Connections for Test devices -->
+                <DeviceConnections>
+                        <!--Socket connectedDevice="Dekuuna"--> <!--Alchera-->
+                        <!--Socket connectedDevice="Nasa_C1S"-->
+                        <Socket connectedDevice="Daratar">
+                        <!--Socket connectedDevice="Pandora" -->
+                                <Serial0>/dev/ttyS0</Serial0> <!-- Linux Console -->
+                                <Serial1>/dev/ttyS1</Serial1> <!-- QA Proxy -->
+                                <!--Serial2>/dev/ttyS2</Serial2--> <!-- SCI previous -->
+                                <Serial2>/dev/ttyUSB3</Serial2> <!-- SCI -->
+                                <PowerbarPort>1</PowerbarPort>
+                                <Rf900Modem>Nevos</Rf900Modem>
+                        </Socket>
+                </DeviceConnections>
+
+                <!-- Automated Power source configuration -->
+                <PowerSource>
+                        <type>CHROMA-61601</type>
+                        <tty>/dev/ttyUSB0</tty>
+                </PowerSource>
+
+                <!-- Should we automatically publish the results of every test run to the public Testlog server? -->
+                <PublishResults>1</PublishResults>
+        </tunet>
+</EnvironmentConfig>
+
+

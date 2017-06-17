@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<TestConfig>
+	<Parameters>
+		<RunLongTestCases>true</RunLongTestCases>
+		<EmailRecipients>jwang@tantalus.com</EmailRecipients>
+		<Iterations>1</Iterations>
+		<!-- Specify which test suite below you wish to run -->
+		<WhichSuite>ProductSmokeTest</WhichSuite>
+	</Parameters>
+
+	<ProductSmokeTest>
+		<TestCase scriptName="Common.Product.Configuration.SetBid" retries="2" />
+		<TestCase scriptName="Common.Product.Configuration.LanMacParams.Default" retries="2" />
+		<TestCase scriptName="Common.Product.Configuration.SetMeterInfo.Default" retries="2" />
+
+		<TestCase scriptName="Common.Product.Configuration.NetStatus.Default" retries="2" />
+
+		<TestCase scriptName="Common.Product.Configuration.TCParams.QueryTCParams" retries="2" />
+		<TestCase scriptName="Common.Product.Configuration.PqmAmrStatus.Default" retries="2" />
+		<TestCase scriptName="Common.Product.Configuration.MeterSerial.Default" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.AMI.ReadOnRequest.Default" retries="2" />
+
+                <TestCase scriptName="Common.Product.Association.Acquisition" retries="2" />
+		<TestCase scriptName="Common.Product.Association.DisableOptimizations" retries="2" />
+		<TestCase scriptName="Common.Product.Association.PortalFound" retries="2" />
+		<TestCase scriptName="Common.Product.Association.FullAssociation" retries="2" />
+		<TestCase scriptName="Common.Product.Association.ForceReassociation" retries="2" />
+
+		<TestCase scriptName="Common.Product.InstallBeacon.InstallInterval" retries="2" />
+		<TestCase scriptName="Common.Product.InstallBeacon.Unassociated" retries="2" />
+
+		<TestCase scriptName="Common.Product.ERT.ActiveDiscoveryMeterTypes" />
+		<TestCase scriptName="Common.Product.ERT.BlackList" retries="2" />
+
+                <TestCase scriptName="Common.Product.Time.FirstTime" retries="2" />
+		<TestCase scriptName="Common.Product.Time.NetworkTimeDrift" retries="2" />
+
+                <TestCase scriptName="Common.Product.Reset.Time" retries="2" />
+		<TestCase scriptName="Common.Product.Reset.NonStickyRF.NonStickyMulticast" retries="2" />
+		<TestCase scriptName="Common.Product.Reset.NonStickyRF.NonStickyUnicast" retries="2" />
+		<TestCase scriptName="Common.Product.Reset.LanMacParams" retries="2" />
+		<TestCase scriptName="Common.Product.Reset.BID" retries="2" />
+		<TestCase scriptName="Common.Product.Reset.DupDetection.DupMulticast" retries="2" />
+
+                <TestCase scriptName="Common.Product.Routing.DsaTable.Default.AddShort" retries="2" />
+                <TestCase scriptName="Common.Product.Routing.UnicastRouting" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.MulticastRouting.FormatBit" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.DuplicateDetection.SeqNumZero" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.RoutingSet.Default.AddShort" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.RoutingSet.Default.DelShort" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.ImplicitAck" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.NewAddShortEmptyTable" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.ExplicitAck.ExplicitAckRatio" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.SetPortalNewNID" retries="2" />
+
+		<TestCase scriptName="Common.Product.Tsp.EdgInterface.TspPacketForwarding" retries="2" />
+
+		<TestCase scriptName="Common.Product.Applications.Outage.ShortOutage" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.Restoral.StartupVoltage" retries="2" />
+
+                 <!-- Start of programmable power supply tests -->
+		<TestCase scriptName="Common.Product.Applications.AMI.Blurt" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.PQM.PqmReport" retries="2" />
+		<TestCase scriptName="Common.Product.TransactionRetrieval.RetrieveMsgTypes" retries="2" />
+<!-- End of programmable power supply tests -->
+
+                <TestCase scriptName="Common.Product.Applications.OutageRestoralTestSuite.Blink" retries="2" />
+
+		<TestCase scriptName="Common.Product.LegacySupport.PingPong" retries="2" />
+		<TestCase scriptName="Common.Product.MessageProcessing.Authentication" retries="2" />
+		<TestCase scriptName="Common.Product.MessageProcessing.LanMacProcessing" retries="2" />
+		<TestCase scriptName="Common.Product.ReturnedMessage.BroadcastMsg" retries="2" />
+
+		<TestCase scriptName="Common.Product.Badger.OrionSetup" retries="2" />
+		<TestCase scriptName="Common.Product.Badger.Startup" retries="2" />
+
+		<TestCase scriptName="Common.Product.NetMetering.NetBlurts" retries="2"/>
+		<TestCase scriptName="Common.Product.NetMetering.NetValidConfig" retries="2"/>
+
+	</ProductSmokeTest>
+</TestConfig>

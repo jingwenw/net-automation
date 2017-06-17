@@ -1,0 +1,11 @@
+[Unit]
+Description=TCNG Service that requires network
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/tcng/tcng_start.sh
+
+[Install]
+WantedBy=multi-user.target
+

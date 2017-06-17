@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<TestConfig>
+
+	<Parameters>
+		<RunLongTestCases>true</RunLongTestCases>
+		<EmailRecipients>jwang@tantalus.com
+                </EmailRecipients>
+                <TcNameIfPrefixed>1</TcNameIfPrefixed>
+		<Iterations>1</Iterations>
+		<!-- Specify which test suite below you wish to run -->
+		<WhichSuite>ProductCommonFailed</WhichSuite>
+	</Parameters>
+
+	<ProductCommonFailed>
+		<TestCase scriptName="Common.Product.Configuration.SetBid" retries="1" />
+		<TestCase scriptName="Common.Product.Configuration.LanMacParams.Default" retries="1" />
+
+                <TestCase scriptName="Common.Product.Configuration.PqmAmrStatus.Default" retries="1" />
+
+		<TestCase scriptName="Common.Product.MessageProcessing.LanMacProcessing" retries="1" />
+                <TestCase scriptName="Common.Product.Time.WatchdogPreserveTime" retries="1" />
+		<TestCase scriptName="Common.Product.Association.ChildAssociation" retries="1" />
+		<TestCase scriptName="Common.Product.Association.TcStartupRetransmitCount" retries="1" />
+
+	</ProductCommonFailed>
+</TestConfig>

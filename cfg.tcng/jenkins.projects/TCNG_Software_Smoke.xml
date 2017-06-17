@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <jenkins.model.BuildDiscarderProperty>
+      <strategy class="hudson.tasks.LogRotator">
+        <daysToKeep>10</daysToKeep>
+        <numToKeep>10</numToKeep>
+        <artifactDaysToKeep>-1</artifactDaysToKeep>
+        <artifactNumToKeep>-1</artifactNumToKeep>
+      </strategy>
+    </jenkins.model.BuildDiscarderProperty>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <assignedNode>master</assignedNode>
+  <canRoam>false</canRoam>
+  <disabled>true</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers>
+    <hudson.triggers.TimerTrigger>
+      <spec>5 */2 * * *</spec>
+    </hudson.triggers.TimerTrigger>
+    <hudson.triggers.SCMTrigger>
+      <spec></spec>
+      <ignorePostCommitHooks>false</ignorePostCommitHooks>
+    </hudson.triggers.SCMTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>whoami
+echo $PATH
+pwd
+
+echo &quot;Goging to trigger night run on project of TCNG_Software&quot;
+JENKINS_URL=&quot;http://10.1.3.178:8080&quot;
+TOKEN_NAME=TCNG_BUILD
+
+#To get crumb
+CRUMB_CMD=&quot;wget -q --auth-no-challenge --user tcng --password Pa\$\$word1 --output-document -&quot;
+CRUMB_URL=&apos;http://10.1.3.178:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,&quot;:&quot;,//crumb)&apos;
+CRUMB=`$CRUMB_CMD $CRUMB_URL`
+
+#Post with the crubm
+curl -X POST -u tcng:Pa\$\$word1 http://10.1.3.178:8080/job/TCNG_Software/build?token=TCNG_BUILD -H $CRUMB </command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>

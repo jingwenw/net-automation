@@ -1,0 +1,468 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description>Do NOT run builds on this project !!!!!!!!!!!!!!!!!!!!!!!&#xd;
+Navigate, instead, to TCNG_Comp_Smoke_Test_Group.</description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <hudson.security.AuthorizationMatrixProperty>
+      <blocksInheritance>true</blocksInheritance>
+      <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Update:jenkins</permission>
+      <permission>hudson.model.Run.Delete:jenkins</permission>
+      <permission>hudson.model.Item.Workspace:jenkins</permission>
+      <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Delete:jenkins</permission>
+      <permission>com.cloudbees.plugins.credentials.CredentialsProvider.ManageDomains:jenkins</permission>
+      <permission>hudson.model.Run.Replay:jenkins</permission>
+      <permission>hudson.model.Item.Configure:jenkins</permission>
+      <permission>hudson.model.Item.Cancel:jenkins</permission>
+      <permission>hudson.model.Item.Delete:jenkins</permission>
+      <permission>hudson.model.Item.Read:jenkins</permission>
+      <permission>com.cloudbees.plugins.credentials.CredentialsProvider.View:jenkins</permission>
+      <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Create:jenkins</permission>
+      <permission>hudson.model.Item.Build:jenkins</permission>
+      <permission>hudson.scm.SCM.Tag:jenkins</permission>
+      <permission>hudson.model.Item.Move:jenkins</permission>
+      <permission>hudson.model.Item.Discover:jenkins</permission>
+      <permission>hudson.model.Run.Update:jenkins</permission>
+    </hudson.security.AuthorizationMatrixProperty>
+    <jenkins.model.BuildDiscarderProperty>
+      <strategy class="hudson.tasks.LogRotator">
+        <daysToKeep>90</daysToKeep>
+        <numToKeep>200</numToKeep>
+        <artifactDaysToKeep>-1</artifactDaysToKeep>
+        <artifactNumToKeep>-1</artifactNumToKeep>
+      </strategy>
+    </jenkins.model.BuildDiscarderProperty>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition plugin="extended-choice-parameter@0.76">
+          <name>PLATFORM_NAME</name>
+          <description>Platform Name</description>
+          <quoteValue>false</quoteValue>
+          <saveJSONParameterToFile>false</saveJSONParameterToFile>
+          <visibleItemCount>5</visibleItemCount>
+          <type>PT_SINGLE_SELECT</type>
+          <groovyScriptFile>/var/_workspace/jenkins_tcng_platforms.gy</groovyScriptFile>
+          <bindings></bindings>
+          <groovyClasspath></groovyClasspath>
+          <multiSelectDelimiter>,</multiSelectDelimiter>
+          <projectName>Do_Not_Use_and_Do_Not_Delete_TCNG_Software_Nightly</projectName>
+        </com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition>
+        <com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition plugin="extended-choice-parameter@0.76">
+          <name>TCNG_FW</name>
+          <description>Build Tag</description>
+          <quoteValue>false</quoteValue>
+          <saveJSONParameterToFile>false</saveJSONParameterToFile>
+          <visibleItemCount>5</visibleItemCount>
+          <type>PT_SINGLE_SELECT</type>
+          <groovyScriptFile>/var/_workspace/jenkins_tcng_tags.gy</groovyScriptFile>
+          <bindings></bindings>
+          <groovyClasspath></groovyClasspath>
+          <multiSelectDelimiter>,</multiSelectDelimiter>
+          <projectName>Do_Not_Use_and_Do_Not_Delete_TCNG_Software_Nightly</projectName>
+        </com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition>
+        <com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition plugin="extended-choice-parameter@0.76">
+          <name>TCNG_BUILD_TYPE</name>
+          <description>Build Type</description>
+          <quoteValue>false</quoteValue>
+          <saveJSONParameterToFile>false</saveJSONParameterToFile>
+          <visibleItemCount>5</visibleItemCount>
+          <type>PT_SINGLE_SELECT</type>
+          <groovyScriptFile>/var/_workspace/jenkins_tcng_build_type.gy</groovyScriptFile>
+          <bindings></bindings>
+          <groovyClasspath></groovyClasspath>
+          <multiSelectDelimiter>,</multiSelectDelimiter>
+          <projectName>Do_Not_Use_and_Do_Not_Delete_TCNG_Software_Nightly</projectName>
+        </com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition>
+        <com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition plugin="extended-choice-parameter@0.76">
+          <name>TCNG_BUILD_FLAG</name>
+          <description>Build Flags</description>
+          <quoteValue>false</quoteValue>
+          <saveJSONParameterToFile>false</saveJSONParameterToFile>
+          <visibleItemCount>5</visibleItemCount>
+          <type>PT_CHECKBOX</type>
+          <groovyScriptFile>/var/_workspace/jenkins_tcng_flags.gy</groovyScriptFile>
+          <bindings></bindings>
+          <groovyClasspath></groovyClasspath>
+          <multiSelectDelimiter>,</multiSelectDelimiter>
+          <projectName>Do_Not_Use_and_Do_Not_Delete_TCNG_Software_Nightly</projectName>
+        </com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition>
+        <com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition plugin="extended-choice-parameter@0.76">
+          <name>BUILD_PRIORITY</name>
+          <description>Build Priority (Lower number - higher priority, default is 3) </description>
+          <quoteValue>false</quoteValue>
+          <saveJSONParameterToFile>false</saveJSONParameterToFile>
+          <visibleItemCount>5</visibleItemCount>
+          <type>PT_SINGLE_SELECT</type>
+          <groovyScriptFile>/var/_workspace/jenkins_tcng_priority.gy</groovyScriptFile>
+          <bindings></bindings>
+          <groovyClasspath></groovyClasspath>
+          <multiSelectDelimiter>,</multiSelectDelimiter>
+          <projectName>Do_Not_Use_and_Do_Not_Delete_TCNG_Software_Nightly</projectName>
+        </com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+    <EnvInjectJobProperty plugin="envinject@2.1.4">
+      <info>
+        <secureGroovyScript plugin="script-security@1.34">
+          <script></script>
+          <sandbox>false</sandbox>
+        </secureGroovyScript>
+        <loadFilesFromMaster>false</loadFilesFromMaster>
+      </info>
+      <on>true</on>
+      <keepJenkinsSystemVariables>true</keepJenkinsSystemVariables>
+      <keepBuildVariables>true</keepBuildVariables>
+      <overrideBuildParameters>false</overrideBuildParameters>
+    </EnvInjectJobProperty>
+  </properties>
+  <scm class="hudson.plugins.mercurial.MercurialSCM" plugin="mercurial@1.61">
+    <source>ssh://buildagent@hg//var/hg/TCNG_Software</source>
+    <modules></modules>
+    <revisionType>BRANCH</revisionType>
+    <revision>default</revision>
+    <clean>false</clean>
+    <credentialsId></credentialsId>
+    <disableChangeLog>false</disableChangeLog>
+  </scm>
+  <assignedNode>fwbuildvm1||fwbuildvm2||fwbuildvm3||fwbuildvm4</assignedNode>
+  <canRoam>false</canRoam>
+  <disabled>true</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers>
+    <hudson.triggers.TimerTrigger>
+      <spec></spec>
+    </hudson.triggers.TimerTrigger>
+  </triggers>
+  <concurrentBuild>true</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>echo &quot;************************&quot;
+whoami
+echo &quot;************************&quot;
+
+/var/workspace/jenkins_build_all_tcng.sh
+</command>
+    </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
+      <command>/var/workspace/jenkins_run_unit_tests.sh
+</command>
+    </hudson.tasks.Shell>
+    <org.jvnet.hudson.plugins.exclusion.CriticalBlockStart plugin="Exclusion@0.12"/>
+    <hudson.plugins.groovy.SystemGroovy plugin="groovy@1.30">
+      <scriptSource class="hudson.plugins.groovy.FileScriptSource">
+        <scriptFile>/var/workspace/jenkins_manage_build_numbers.gy</scriptFile>
+      </scriptSource>
+      <bindings></bindings>
+      <classpath></classpath>
+    </hudson.plugins.groovy.SystemGroovy>
+    <org.jvnet.hudson.plugins.exclusion.CriticalBlockEnd plugin="Exclusion@0.12"/>
+    <hudson.plugins.groovy.SystemGroovy plugin="groovy@1.30">
+      <scriptSource class="hudson.plugins.groovy.FileScriptSource">
+        <scriptFile>/var/workspace/jenkins_manage_bn_product_smoke.gy</scriptFile>
+      </scriptSource>
+      <bindings></bindings>
+      <classpath></classpath>
+    </hudson.plugins.groovy.SystemGroovy>
+    <org.jenkinsci.plugins.conditionalbuildstep.singlestep.SingleConditionalBuilder plugin="conditional-buildstep@1.3.6">
+      <condition class="org.jenkins_ci.plugins.run_condition.core.FileExistsCondition" plugin="run-condition@1.0">
+        <file>run_product_smoke_test.txt</file>
+        <baseDir class="org.jenkins_ci.plugins.run_condition.common.BaseDirectory$Workspace"/>
+      </condition>
+      <buildStep class="hudson.plugins.parameterizedtrigger.TriggerBuilder" plugin="parameterized-trigger@2.35.2">
+        <configs>
+          <hudson.plugins.parameterizedtrigger.BlockableBuildTriggerConfig>
+            <configs>
+              <hudson.plugins.parameterizedtrigger.CurrentBuildParameters/>
+            </configs>
+            <projects>TCNG_Product_Smoke_Test</projects>
+            <condition>ALWAYS</condition>
+            <triggerWithNoParameters>false</triggerWithNoParameters>
+            <triggerFromChildProjects>false</triggerFromChildProjects>
+            <buildAllNodesWithLabel>false</buildAllNodesWithLabel>
+          </hudson.plugins.parameterizedtrigger.BlockableBuildTriggerConfig>
+        </configs>
+      </buildStep>
+      <runner class="org.jenkins_ci.plugins.run_condition.BuildStepRunner$Fail" plugin="run-condition@1.0"/>
+    </org.jenkinsci.plugins.conditionalbuildstep.singlestep.SingleConditionalBuilder>
+    <hudson.tasks.Shell>
+      <command>rm -f /var/workspace/TCNG_Software/run_product_smoke_test.txt</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <hudson.plugins.cobertura.CoberturaPublisher plugin="cobertura@1.11">
+      <coberturaReportFile>**/*_gcov.xml</coberturaReportFile>
+      <onlyStable>false</onlyStable>
+      <failUnhealthy>false</failUnhealthy>
+      <failUnstable>false</failUnstable>
+      <autoUpdateHealth>false</autoUpdateHealth>
+      <autoUpdateStability>false</autoUpdateStability>
+      <zoomCoverageChart>false</zoomCoverageChart>
+      <maxNumberOfBuilds>0</maxNumberOfBuilds>
+      <failNoReports>true</failNoReports>
+      <healthyTarget>
+        <targets class="enum-map" enum-type="hudson.plugins.cobertura.targets.CoverageMetric">
+          <entry>
+            <hudson.plugins.cobertura.targets.CoverageMetric>METHOD</hudson.plugins.cobertura.targets.CoverageMetric>
+            <int>8000000</int>
+          </entry>
+          <entry>
+            <hudson.plugins.cobertura.targets.CoverageMetric>LINE</hudson.plugins.cobertura.targets.CoverageMetric>
+            <int>8000000</int>
+          </entry>
+          <entry>
+            <hudson.plugins.cobertura.targets.CoverageMetric>CONDITIONAL</hudson.plugins.cobertura.targets.CoverageMetric>
+            <int>7000000</int>
+          </entry>
+        </targets>
+      </healthyTarget>
+      <unhealthyTarget>
+        <targets class="enum-map" enum-type="hudson.plugins.cobertura.targets.CoverageMetric">
+          <entry>
+            <hudson.plugins.cobertura.targets.CoverageMetric>METHOD</hudson.plugins.cobertura.targets.CoverageMetric>
+            <int>0</int>
+          </entry>
+          <entry>
+            <hudson.plugins.cobertura.targets.CoverageMetric>LINE</hudson.plugins.cobertura.targets.CoverageMetric>
+            <int>0</int>
+          </entry>
+          <entry>
+            <hudson.plugins.cobertura.targets.CoverageMetric>CONDITIONAL</hudson.plugins.cobertura.targets.CoverageMetric>
+            <int>0</int>
+          </entry>
+        </targets>
+      </unhealthyTarget>
+      <failingTarget>
+        <targets class="enum-map" enum-type="hudson.plugins.cobertura.targets.CoverageMetric">
+          <entry>
+            <hudson.plugins.cobertura.targets.CoverageMetric>METHOD</hudson.plugins.cobertura.targets.CoverageMetric>
+            <int>0</int>
+          </entry>
+          <entry>
+            <hudson.plugins.cobertura.targets.CoverageMetric>LINE</hudson.plugins.cobertura.targets.CoverageMetric>
+            <int>0</int>
+          </entry>
+          <entry>
+            <hudson.plugins.cobertura.targets.CoverageMetric>CONDITIONAL</hudson.plugins.cobertura.targets.CoverageMetric>
+            <int>0</int>
+          </entry>
+        </targets>
+      </failingTarget>
+      <sourceEncoding>ASCII</sourceEncoding>
+    </hudson.plugins.cobertura.CoberturaPublisher>
+    <hudson.tasks.junit.JUnitResultArchiver plugin="junit@1.21">
+      <testResults>**/TC_*.xml</testResults>
+      <keepLongStdio>true</keepLongStdio>
+      <healthScaleFactor>20.0</healthScaleFactor>
+      <allowEmptyResults>false</allowEmptyResults>
+    </hudson.tasks.junit.JUnitResultArchiver>
+    <hudson.plugins.emailext.ExtendedEmailPublisher plugin="email-ext@2.60">
+      <recipientList>$DEFAULT_RECIPIENTS</recipientList>
+      <configuredTriggers>
+        <hudson.plugins.emailext.plugins.trigger.FailureTrigger>
+          <email>
+            <recipientList>TCNG_notifications_build@tantalus.com</recipientList>
+            <subject>${BUILD_STATUS}! - ${PROJECT_DISPLAY_NAME} Build #${BUILD_NUMBER}  -  ${TCNG_FW}  ${PLATFORM_NAME}</subject>
+            <body>$PROJECT_DEFAULT_CONTENT
+
+This build failed to complete!
+
+Full build log can be found here:
+${BUILD_URL}
+
+For technical support or other inquiries, contact the Buildmeister at:
+${ADMIN_EMAIL}
+
+-----------------------------------------------------------------------------------------------
+Last 100 lines of build output:
+
+${BUILD_LOG, maxLines=100}</body>
+            <recipientProviders>
+              <hudson.plugins.emailext.plugins.recipients.ListRecipientProvider/>
+              <hudson.plugins.emailext.plugins.recipients.CulpritsRecipientProvider/>
+            </recipientProviders>
+            <attachmentsPattern></attachmentsPattern>
+            <attachBuildLog>false</attachBuildLog>
+            <compressBuildLog>false</compressBuildLog>
+            <replyTo>$PROJECT_DEFAULT_REPLYTO</replyTo>
+            <contentType>project</contentType>
+          </email>
+        </hudson.plugins.emailext.plugins.trigger.FailureTrigger>
+        <hudson.plugins.emailext.plugins.trigger.BuildingTrigger>
+          <email>
+            <recipientList>TCNG_notifications_build@tantalus.com</recipientList>
+            <subject>${BUILD_STATUS}! - ${PROJECT_DISPLAY_NAME} Build #${BUILD_NUMBER}  -  ${TCNG_FW}  ${PLATFORM_NAME}</subject>
+            <body>$PROJECT_DEFAULT_CONTENT
+
+This build completed successfully!
+However, some unit tests failed....
+
+----------------------------------------------------------------------------------------------
+Unit Test Results:
+
+- Tests Run:       ${TEST_COUNTS, var=&quot;total&quot;}
+- Tests Passed:  ${TEST_COUNTS, var=&quot;pass&quot;}
+- Tests Failed:    ${TEST_COUNTS, var=&quot;fail&quot;}
+
+Full build and test log can be found here, along with code coverage data:
+${BUILD_URL}
+
+For technical support or other inquiries, contact the Buildmeister:
+Borisa Jevtic &lt;bjevtic@tantalus.com&gt;
+
+-----------------------------------------------------------------------------------------------
+Detailed error output for failed tests:
+
+${FAILED_TESTS, showMessage=0}</body>
+            <recipientProviders>
+              <hudson.plugins.emailext.plugins.recipients.ListRecipientProvider/>
+              <hudson.plugins.emailext.plugins.recipients.CulpritsRecipientProvider/>
+            </recipientProviders>
+            <attachmentsPattern></attachmentsPattern>
+            <attachBuildLog>false</attachBuildLog>
+            <compressBuildLog>false</compressBuildLog>
+            <replyTo>$PROJECT_DEFAULT_REPLYTO</replyTo>
+            <contentType>project</contentType>
+          </email>
+        </hudson.plugins.emailext.plugins.trigger.BuildingTrigger>
+        <hudson.plugins.emailext.plugins.trigger.FixedTrigger>
+          <email>
+            <recipientList>TCNG_notifications_build@tantalus.com</recipientList>
+            <subject>${BUILD_STATUS}! - ${PROJECT_DISPLAY_NAME} Build #${BUILD_NUMBER}  -  ${TCNG_FW}  ${PLATFORM_NAME}</subject>
+            <body>$PROJECT_DEFAULT_CONTENT
+
+This build completed successfully and passed all unit tests!
+
+----------------------------------------------------------------------------------------------
+Unit Test Results:
+
+- Tests Run:       ${TEST_COUNTS, var=&quot;total&quot;}
+- Tests Passed:  ${TEST_COUNTS, var=&quot;pass&quot;}
+- Tests Failed:    ${TEST_COUNTS, var=&quot;fail&quot;}
+
+Full build and test log can be found here, along with code coverage data:
+${BUILD_URL}
+
+For technical support or other inquiries, contact the Buildmeister:
+Borisa Jevtic &lt;bjevtic@tantalus.com&gt;</body>
+            <recipientProviders>
+              <hudson.plugins.emailext.plugins.recipients.ListRecipientProvider/>
+              <hudson.plugins.emailext.plugins.recipients.CulpritsRecipientProvider/>
+            </recipientProviders>
+            <attachmentsPattern></attachmentsPattern>
+            <attachBuildLog>false</attachBuildLog>
+            <compressBuildLog>false</compressBuildLog>
+            <replyTo>$PROJECT_DEFAULT_REPLYTO</replyTo>
+            <contentType>project</contentType>
+          </email>
+        </hudson.plugins.emailext.plugins.trigger.FixedTrigger>
+        <hudson.plugins.emailext.plugins.trigger.UnstableTrigger>
+          <email>
+            <recipientList>TCNG_notifications_build@tantalus.com</recipientList>
+            <subject>${BUILD_STATUS}! - ${PROJECT_DISPLAY_NAME} Build #${BUILD_NUMBER}  -  ${TCNG_FW}  ${PLATFORM_NAME}</subject>
+            <body>$PROJECT_DEFAULT_CONTENT
+
+This build completed successfully!
+However, some unit tests failed....
+
+-----------------------------------------------------------------------------------------------
+Unit Test Results:
+
+- Tests Run:       ${TEST_COUNTS, var=&quot;total&quot;}
+- Tests Passed:  ${TEST_COUNTS, var=&quot;pass&quot;}
+- Tests Failed:    ${TEST_COUNTS, var=&quot;fail&quot;}
+
+Full build and test log can be found here, along with code coverage data:
+${BUILD_URL}
+
+For technical support or other inquiries, contact the Buildmeister:
+Borisa Jevtic &lt;bjevtic@tantalus.com&gt;
+
+-----------------------------------------------------------------------------------------------
+Detailed error output for failed tests:
+
+${FAILED_TESTS, showMessage=0}</body>
+            <recipientProviders/>
+            <attachmentsPattern></attachmentsPattern>
+            <attachBuildLog>false</attachBuildLog>
+            <compressBuildLog>false</compressBuildLog>
+            <replyTo>$PROJECT_DEFAULT_REPLYTO</replyTo>
+            <contentType>project</contentType>
+          </email>
+        </hudson.plugins.emailext.plugins.trigger.UnstableTrigger>
+        <hudson.plugins.emailext.plugins.trigger.SuccessTrigger>
+          <email>
+            <recipientList>TCNG_notifications_build@tantalus.com</recipientList>
+            <subject>${BUILD_STATUS}! - ${PROJECT_DISPLAY_NAME} Build #${BUILD_NUMBER}  -  ${TCNG_FW}  ${PLATFORM_NAME}</subject>
+            <body>$PROJECT_DEFAULT_CONTENT
+
+This build completed successfully and passed all unit tests!
+
+----------------------------------------------------------------------------------------------
+Unit Test Results:
+
+- Tests Run:       ${TEST_COUNTS, var=&quot;total&quot;}
+- Tests Passed:  ${TEST_COUNTS, var=&quot;pass&quot;}
+- Tests Failed:    ${TEST_COUNTS, var=&quot;fail&quot;}
+
+Full build and test log can be found here, along with code coverage data:
+${BUILD_URL}
+
+For technical support or other inquiries, contact the Buildmeister:
+Borisa Jevtic &lt;bjevtic@tantalus.com&gt;</body>
+            <recipientProviders/>
+            <attachmentsPattern></attachmentsPattern>
+            <attachBuildLog>false</attachBuildLog>
+            <compressBuildLog>false</compressBuildLog>
+            <replyTo>$PROJECT_DEFAULT_REPLYTO</replyTo>
+            <contentType>project</contentType>
+          </email>
+        </hudson.plugins.emailext.plugins.trigger.SuccessTrigger>
+      </configuredTriggers>
+      <contentType>default</contentType>
+      <defaultSubject>$DEFAULT_SUBJECT</defaultSubject>
+      <defaultContent>$DEFAULT_CONTENT
+-----------------------------------------------------------------------------------------------
+Build:                   #${BUILD_NUMBER}
+Build Tag:            ${TCNG_FW}
+Platform Name:    ${PLATFORM_NAME}
+Build Type:           ${TCNG_BUILD_TYPE}
+Build Flags:          ${TCNG_BUILD_FLAG}
+Build Trigger:        ${BUILD_CAUSE}
+Priority:                ${BUILD_PRIORITY}
+-----------------------------------------------------------------------------------------------</defaultContent>
+      <attachmentsPattern></attachmentsPattern>
+      <presendScript>$DEFAULT_PRESEND_SCRIPT</presendScript>
+      <postsendScript>$DEFAULT_POSTSEND_SCRIPT</postsendScript>
+      <attachBuildLog>false</attachBuildLog>
+      <compressBuildLog>false</compressBuildLog>
+      <replyTo>$DEFAULT_REPLYTO</replyTo>
+      <saveOutput>false</saveOutput>
+      <disabled>false</disabled>
+    </hudson.plugins.emailext.ExtendedEmailPublisher>
+  </publishers>
+  <buildWrappers>
+    <org.jvnet.hudson.plugins.exclusion.IdAllocator plugin="Exclusion@0.12">
+      <ids>
+        <org.jvnet.hudson.plugins.exclusion.DefaultIdType>
+          <name>BUILD_NUMBERS</name>
+        </org.jvnet.hudson.plugins.exclusion.DefaultIdType>
+      </ids>
+    </org.jvnet.hudson.plugins.exclusion.IdAllocator>
+    <com.lookout.jenkins.EnvironmentScript plugin="environment-script@1.2.5">
+      <script>if [ -z &quot;$TCNG_FW&quot; ]; then
+    echo TCNG_FW=&quot;TCNG_Nightly_&quot;$( date +%F )
+fi
+</script>
+      <scriptType>unixScript</scriptType>
+      <runOnlyOnParent>false</runOnlyOnParent>
+      <hideEnvironmentVariablesValues>false</hideEnvironmentVariablesValues>
+    </com.lookout.jenkins.EnvironmentScript>
+    <org.jenkinsci.plugins.buildnamesetter.BuildNameSetter plugin="build-name-setter@1.6.7">
+      <template>#${BUILD_NUMBER}_${TCNG_FW}_${PLATFORM_NAME}</template>
+      <runAtStart>true</runAtStart>
+      <runAtEnd>false</runAtEnd>
+    </org.jenkinsci.plugins.buildnamesetter.BuildNameSetter>
+  </buildWrappers>
+</project>

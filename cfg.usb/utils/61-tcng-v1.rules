@@ -1,0 +1,48 @@
+#
+# NOTE: For the USB removal, it does not matach the vendor and product ids, so
+# just brutally remove it from VMs for all USBs
+ACTION=="remove", \
+    SUBSYSTEM=="usb", \
+    RUN+="/opt/tcng/usb-libvirt-hotplug.sh v1"
+
+# For Phidget relays
+ACTION=="add", \
+    SUBSYSTEM=="usb", \
+    ATTRS{idVendor}=="06c2", \
+    ATTRS{idProduct}=="00[3-a][0-f]", \
+    ATTRS{devpath}=="1.1", \
+    RUN+="/opt/tcng/usb-libvirt-hotplug.sh v1"
+
+# For FTDI USB-Serial port converter
+ACTION=="add", \
+    SUBSYSTEM=="usb", \
+    ATTRS{idVendor}=="0403", \
+    ATTRS{idProduct}=="6001", \
+    ATTRS{devpath}=="1.2.3.1", \
+    RUN+="/opt/tcng/usb-libvirt-hotplug.sh v1"
+ACTION=="add", \
+    SUBSYSTEM=="usb", \
+    ATTRS{idVendor}=="0403", \
+    ATTRS{idProduct}=="6001", \
+    ATTRS{devpath}=="1.2.3.2", \
+    RUN+="/opt/tcng/usb-libvirt-hotplug.sh v1"
+ACTION=="add", \
+    SUBSYSTEM=="usb", \
+    ATTRS{idVendor}=="0403", \
+    ATTRS{idProduct}=="6001", \
+    ATTRS{devpath}=="1.2.3.3", \
+    RUN+="/opt/tcng/usb-libvirt-hotplug.sh v1"
+ACTION=="add", \
+    SUBSYSTEM=="usb", \
+    ATTRS{idVendor}=="0403", \
+    ATTRS{idProduct}=="6001", \
+    ATTRS{devpath}=="1.2.3.4", \
+    RUN+="/opt/tcng/usb-libvirt-hotplug.sh v1"
+
+# For SAM-BA flashing tool
+ACTION=="add", \
+    SUBSYSTEM=="usb", \
+    ATTRS{idVendor}=="03eb", \
+    ATTRS{idProduct}=="6124", \
+    ATTRS{devpath}=="1.6.1", \
+    RUN+="/opt/tcng/usb-libvirt-hotplug.sh v1"

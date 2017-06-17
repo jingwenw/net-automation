@@ -1,0 +1,262 @@
+<?xml version="1.0"?>
+<TestConfig>
+
+	<Parameters>
+		<RunLongTestCases>true</RunLongTestCases>
+		<EmailRecipients>xli@tantalus.com, jahmed@tantalus.com, tscott@tantalus.com, acrawford@tantalus.com, spark@tantalus.com, mma@tantalus.com, kbahi@tantalus.com, kng@tantalus.com</EmailRecipients>
+		<Iterations>1</Iterations>
+		<!-- Specify which test suite below you wish to run -->
+		<WhichSuite>ProductRegression</WhichSuite>
+	</Parameters>
+
+	<ProductRegression>
+		<TestCase scriptName="Common.Product.Configuration.SetBid" retries="2" />
+		<TestCase scriptName="TC-1X16.Product.SCI.SetPortal" retries="2" />
+		<TestCase scriptName="Common.Product.Configuration.LanMacParams.Default" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.DsaTable.Default.AddShort" retries="2" />
+		<TestCase scriptName="Common.Product.Configuration.TCParams.QueryTCParams" retries="2" />
+		<TestCase scriptName="Common.Product.Configuration.PqmAmrStatus.Default" retries="2" />
+		<TestCase scriptName="Common.Product.Configuration.MeterSerial.Default" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.AMI.ReadOnRequest.Default" retries="2" />
+		<TestCase scriptName="Common.Product.Association.Acquisition" retries="2" />
+		<TestCase scriptName="Common.Product.Configuration.LanMacParams.DefaultV3" retries="2" />
+		<TestCase scriptName="Common.Product.Configuration.TCParams.InvalidConfig" retries="2" />
+		<TestCase scriptName="Common.Product.Configuration.MeterSerial.Boundary" retries="2" />
+		<TestCase scriptName="Common.Product.Configuration.SetMeterInfo.ValidConfig" retries="2" />
+		<TestCase scriptName="Common.Product.Configuration.SetMeterInfo.Default" retries="2" />
+		<TestCase scriptName="Common.Product.Configuration.SetMeterInfo.InvalidConfig" retries="2" />
+		<TestCase scriptName="Common.Product.Configuration.PqmAmrStatus.AMRInterval" retries="2" />
+		<TestCase scriptName="Common.Product.Configuration.NetStatus.Default" retries="2" />
+		<TestCase scriptName="Common.Product.InstallBeacon.RelativeTimeBeacon" retries="2" />
+		<TestCase scriptName="Common.Product.InstallBeacon.UplinkDown" retries="2" />
+		<TestCase scriptName="Common.Product.InstallBeacon.InstallInterval" retries="2" />
+		<TestCase scriptName="Common.Product.InstallBeacon.Unassociated" retries="2" />
+		<TestCase scriptName="Common.Product.Association.PortalFound" retries="2" />
+		<TestCase scriptName="Common.Product.Association.FullAssociation" retries="2" />
+		<TestCase scriptName="Common.Product.Association.ForceReassociation" retries="2" />
+		<TestCase scriptName="Common.Product.Association.ReassociationTimeout.NonPortal" retries="2" />
+		<TestCase scriptName="Common.Product.Association.ReassociationTimeout.Portal" retries="2" />
+		<TestCase scriptName="Common.Product.Association.PortalStress" retries="2" />
+		<TestCase scriptName="Common.Product.Association.StrongCount" retries="2" />
+		<TestCase scriptName="Common.Product.Association.ChildAssociation" retries="2" />
+		<TestCase scriptName="Common.Product.Association.InstallTimeout" retries="2" />
+		<TestCase scriptName="Common.Product.Association.MaxCount" retries="2" />
+		<TestCase scriptName="Common.Product.Association.BeaconMultiplier" retries="2" />
+		<TestCase scriptName="Common.Product.Association.PBID" retries="2" />
+		<TestCase scriptName="Common.Product.Association.AlphaPBID" retries="2" />
+		<TestCase scriptName="Common.Product.Association.PortalRecovery" retries="2" />
+		<!-- New Mode V project association product testcases -->
+		<TestCase scriptName="Common.Product.Association.RoutingSetLFI" retries="2" />
+		<TestCase scriptName="Common.Product.Association.MetadataPropagation" retries="2" />
+		<TestCase scriptName="TC-1X16.Product.Applications.ReassociationBroadcast" retries="2" />
+		<TestCase scriptName="Common.Product.InfraReassociationBroadcast" retries="2" />
+		<TestCase scriptName="Common.Product.Configuration.CandidateListConfiguration" retries="2" />
+		<TestCase scriptName="Common.Product.Association.PacketCountBeaconMult" retries="2" />
+		<TestCase scriptName="Common.Product.Association.Olqm.PsrCalculation" retries="2" />
+		<TestCase scriptName="Common.Product.Association.Olqm.SessionConcurrency" retries="2" />
+		<TestCase scriptName="Common.Product.Association.Olqm.RequestCount" retries="2" />
+		<TestCase scriptName="Common.Product.Association.WhiteBlackList" retries="2" />
+		<!-- New Mode V project self healing algorithm testcases -->
+		<!--TestCase scriptName="Common.Product.Configuration.SelfHealingConfiguration" retries="2" />
+		<TestCase scriptName="Common.Product.Configuration.SelfHealingIntervalConfiguration" retries="2" />
+		<TestCase scriptName="Common.Product.SelfHealingSupport.SHPong" retries="2" />
+		<TestCase scriptName="Common.Product.Configuration.SelfHealConsecutiveCountReassociate1" retries="2" />
+		<TestCase scriptName="Common.Product.Configuration.SelfHealConsecutiveCountReassociate2" retries="2" />
+		<TestCase scriptName="Common.Product.Configuration.SelfHealConsecutiveCountReassociate3" retries="2" /-->
+
+		<TestCase scriptName="Common.Product.ERT.ActiveDiscoveryMeterTypes" />
+		<TestCase scriptName="Common.Product.ERT.BlackList" retries="2" />
+		<TestCase scriptName="Common.Product.ERT.BlackListPersistence" retries="2" />
+		<TestCase scriptName="Common.Product.ERT.DuplicateErt" retries="2" />
+		<TestCase scriptName="Common.Product.ERT.ErtInvalidIntervalConfiguration" retries="2" />
+		<TestCase scriptName="Common.Product.ERT.ErtValidIntervalConfiguration" retries="2" />
+		<TestCase scriptName="Common.Product.ERT.Interval100sFixedNetwork" retries="2" />
+		<TestCase scriptName="Common.Product.ERT.IntervalLegacy" />
+		<TestCase scriptName="Common.Product.ERT.MaxNumberOfDevicesInFiltering" retries="2" />
+		<TestCase scriptName="Common.Product.ERT.NoFilteringErt" retries="2" />
+		<TestCase scriptName="Common.Product.ERT.PortalFilteringSameErtWithDifferentReadings" />
+		<TestCase scriptName="Common.Product.ERT.RedundantErt" />
+		<TestCase scriptName="Common.Product.ERT.ClearBlackList" retries="2" />
+		<TestCase scriptName="Common.Product.ERT.SCMDataIntegrity" retries="2" />
+		<TestCase scriptName="Common.Product.ERT.SCMPDataIntegrity" retries="2" />
+		<TestCase scriptName="Common.Product.Time.FirstTime" retries="2" />
+		<TestCase scriptName="Common.Product.Time.NetworkTimeDrift" retries="2" />
+		<TestCase scriptName="Common.Product.Time.NetworkTimePowerup" retries="2" />
+		<TestCase scriptName="Common.Product.Time.RelativeBlurtProtection" retries="2" />
+		<TestCase scriptName="Common.Product.Time.WatchdogPreserveTime" retries="2" />
+		<TestCase scriptName="Common.Product.Reset.Time" retries="2" />
+		<TestCase scriptName="Common.Product.Reset.NonStickyRF.NonStickyMulticast" retries="2" />
+		<TestCase scriptName="Common.Product.Reset.NonStickyRF.NonStickyUnicast" retries="2" />
+		<TestCase scriptName="Common.Product.Reset.DsaTable" retries="2" />
+		<TestCase scriptName="Common.Product.Reset.LanMacParams" retries="2" />
+		<TestCase scriptName="Common.Product.Reset.ResetCounts" />
+		<TestCase scriptName="Common.Product.Reset.DupDetection.DupUnicast" retries="2" />
+		<TestCase scriptName="Common.Product.Reset.RoutingTable" retries="2" />
+		<TestCase scriptName="Common.Product.Reset.Restoral" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.UnicastRouting" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.UnicastUpstreamPortal" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.MulticastRouting.FormatBit" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.MulticastRouting.PropagationBit" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.MulticastRouting.DsaValidation" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.MulticastRouting.ResendBroadcast" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.MulticastRouting.RoutingSetSizePbit" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.DuplicateDetection.SeqNumZero" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.DsaTable.RemoveEmpty" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.DsaTable.ModifyExistingBid" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.DsaTable.MaxTableSize" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.DsaTable.Default.DelShort" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.DsaTable.ModifyTantalusBid" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.DsaTable.ProcessMulticastMessage" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.RoutingSet.RemoveEmpty" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.RoutingSet.EntryManipulation" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.RoutingSet.AddDuplicate" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.RoutingSet.MaxTableSize" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.RoutingSet.PPStatusCodes.PPStatusCodeFull" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.RoutingSet.PPStatusCodes.PPStatusCodeExist" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.RoutingSet.PPStatusCodes.PPStatusCodeEmpty" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.RoutingSet.PPStatusCodes.PPStatusCodeOwn" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.RoutingSet.PPStatusCodes.PPStatusCodeAdd" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.RoutingSet.PPStatusCodes.PPStatusCodes" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.RoutingSet.PPStatusCodes.PPStatusCodeNotExist" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.RoutingSet.PPStatusCodes.PPStatusCodeDel" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.RoutingSet.Default.AddShort" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.RoutingSet.Default.DelShort" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.RoutingSet.Default.PPDel" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.RoutingSet.Default.PPAdd" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.RoutingSet.Default.NewAddShort" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.ImplicitAck" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.NewAddShortEmptyTable" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.ExplicitAck.ExplicitAckETimer" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.ExplicitAck.ExplicitAckReply" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.ExplicitAck.ExplicitAckRatio" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.ExplicitAck.ExplicitAckNoRetransmit" retries="2" />
+
+		<TestCase scriptName="Common.Product.Routing.SetPortalNewNID" retries="2" />
+		<TestCase scriptName="Common.Product.Tsp.EdgInterface.TspPacketForwarding" retries="2" />
+		<TestCase scriptName="Common.Product.Tsp.EdgInterface.TspBacklog" retries="2" />
+		<TestCase scriptName="Common.Product.Tsp.UpstreamBlockage" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.Outage.ShortOutage" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.Restoral.StartupVoltage" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.Outage.SoftResetShortOutage" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.Outage.RestoralOnAcUp" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.Outage.LongOutage" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.Outage.ColdStart" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.Outage.BlurtInOutage" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.Outage.RestoralOnPowerUp" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.Outage.ConfigureReportTime" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.Outage.DisableOutageReport" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.Outage.OutageRestoral" retries="2" />
+<!-- Start of programmable power supply tests -->
+		<TestCase scriptName="Common.Product.Applications.AMI.Blurt" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.AMI.RelativeBlurt" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.AMI.VoltageReading" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.AMI.ReadOnRequest.LoseScheduledReadOnOutage" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.AMI.ReadOnRequest.ImmediateRequest" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.AMI.ReadOnRequest.ImmediateCoincidesWithScheduled" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.AMI.ReadOnRequest.NetworkTimeTransition" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.AMI.ReadOnRequest.ScheduledRequest" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.AMI.ReadOnRequest.CoincideWithBlurt" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.AMI.ReadOnRequest.BeforeScheduledRead" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.AMI.ReadOnRequest.DuringRelativeTime" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.AMI.ReadOnRequest.MultipleScheduledRequests" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.AMI.ChangeIntervalShortToLong" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.PQM.DownstreamSQ" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.PQM.StateTransitions.SagToOutage" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.PQM.StateTransitions.RestoralToSwell" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.PQM.StateTransitions.SwellToSag" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.PQM.StateTransitions.NormalToSag" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.PQM.StateTransitions.SwellToOutage" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.PQM.StateTransitions.SagToNormal" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.PQM.StateTransitions.SwellToNormal" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.PQM.StateTransitions.RestoralToSag" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.PQM.StateTransitions.NormalToSwell" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.PQM.StateTransitions.SagToSwell" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.PQM.StateTransitions.SagToSag" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.PQM.StateTransitions.SwellToSwell" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.PQM.ConfigureMultiLevelPQM" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.PQM.MaxVoltagePulse" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.PQM.PqmReport" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.PQM.VoltageReading" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.PQM.BlinksDuringPowerRestoration" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.PQM.MinVoltagePulse" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.PQM.ReportDuringSag" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.PQM.Blink" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.PQM.ReportDuringSwell" retries="2" />
+		<TestCase scriptName="Common.Product.TransactionRetrieval.RetrieveMsgTypes" retries="2" />
+<!-- End of programmable power supply tests -->
+
+		<TestCase scriptName="Common.Product.Applications.AMI.ReadOnRequest.DemandRead" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.OutageRestoralTestSuite.Blink" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.OutageRestoralTestSuite.Long" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.OutageRestoralTestSuite.Medium" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.OutageRestoralTestSuite.Short" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.OutageRestoralTestSuite.SoftResetOutageRestoral" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.OutageRestoralTestSuite.SoftResetOutageShort" retries="2" />
+
+		<TestCase scriptName="Common.Product.TransactionRetrieval.RetrieveRange" retries="2" />
+		<TestCase scriptName="Common.Product.ReturnedMessage.NoAck" retries="2" />
+		<TestCase scriptName="Common.Product.ReturnedMessage.NoSCIResponse" retries="2" />
+		<TestCase scriptName="Common.Product.ReturnedMessage.NoResponse" retries="2" />
+		<TestCase scriptName="Common.Product.ReturnedMessage.BroadcastMsg" retries="2" />
+		<TestCase scriptName="Common.Product.ReturnedMessage.DeadEnd" retries="2" />
+		<TestCase scriptName="Common.Product.ReturnedMessage.MsgUnsupported" retries="2" />
+		<TestCase scriptName="Common.Product.MessageProcessing.FuzzImmunity" retries="2" />
+		<TestCase scriptName="Common.Product.MessageProcessing.Authentication" retries="2" />
+		<TestCase scriptName="Common.Product.LegacySupport.PingPong" retries="2" />
+		<TestCase scriptName="Common.Product.Association.NonPortalUplinkRecovery" retries="2" />
+		<TestCase scriptName="Common.Product.Association.PortalUplinkRecovery" retries="2" />
+		<TestCase scriptName="Common.Product.Association.RetransmitTimer" retries="2" />
+        	<TestCase scriptName="Common.Product.Association.TcStartupRetransmitCount" retries="2" />
+		<TestCase scriptName="Common.Product.MessageProcessing.PowerFail.ExpAck" retries="2" />
+		<TestCase scriptName="Common.Product.MessageProcessing.PowerFail.Multicast" retries="2" />
+		<TestCase scriptName="Common.Product.MessageProcessing.PowerFail.NonPortal" retries="2" />
+		<TestCase scriptName="Common.Product.MessageProcessing.PowerFail.Portal" retries="2" />
+		<TestCase scriptName="Common.Product.MessageProcessing.LanMacProcessing" retries="2" />
+		<TestCase scriptName="Common.Product.ReturnedMessage.StaleChildMsg" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.DsaTable.MinTableSize" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.ExplicitAck.ExplicitAckTransmitCount" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.PublishBID" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.TableUtilization" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.AMI.ChangeIntervalLongToShort" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.AMI.IntervalIntegrity" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.AMI.RelativeTime_LongOutage" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.AMI.RelativeTime_ShortOutages" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.Outage.RepeatOutages" retries="2" />
+		<TestCase scriptName="Common.Product.Applications.PQM.InvalidConfig" retries="2" />
+		<TestCase scriptName="Common.Product.Association.DisableOptimizations" retries="2" />
+		<TestCase scriptName="Common.Product.Association.EnableOptimizations" retries="2" />
+		<TestCase scriptName="Common.Product.Association.InvalidConfig" retries="2" />
+		<TestCase scriptName="Common.Product.Configuration.LanMacParams.Boundary" retries="2" />
+		<TestCase scriptName="Common.Product.MessageProcessing.MessageBlaster" retries="2" />
+		<TestCase scriptName="Common.Product.Reset.BID" retries="2" />
+		<TestCase scriptName="Common.Product.Reset.DupDetection.DupMulticast" retries="2" />
+		<TestCase scriptName="Common.Product.ReturnedMessage.DataCorrupt" retries="2" />
+		<TestCase scriptName="Common.Product.Routing.DsaTable.InvalidContextualAddress" retries="2" />
+		<TestCase scriptName="Common.Product.Time.PreserveTime" retries="2" />
+		
+		<TestCase scriptName="Common.Product.Badger.OrionSetup" retries="2" />
+		<TestCase scriptName="Common.Product.Badger.Duplicates" retries="2" />
+		<TestCase scriptName="Common.Product.Badger.ScanTime" retries="2" />
+		<TestCase scriptName="Common.Product.Badger.BitWidths" retries="2" />
+		<TestCase scriptName="Common.Product.Badger.Startup" retries="2" />
+		<TestCase scriptName="Common.Product.Badger.InvalidConfig" retries="2" />
+		
+		<TestCase scriptName="Common.Product.NetMetering.NetBlurts" retries="2"/>
+		<TestCase scriptName="Common.Product.NetMetering.NetInvalidConfig" retries="2"/>
+		<TestCase scriptName="Common.Product.NetMetering.NetValidConfig" retries="2"/>
+		<TestCase scriptName="TC-1X16.Product.RD1000Interface" retries="2" />
+		<TestCase scriptName="TC-1X16.Product.SCI.BypassSuperCaps" retries="2" />
+		<TestCase scriptName="TC-1X16.Product.SCI.IgnoreTSP" retries="2" />
+		<TestCase scriptName="TC-1X16.Product.SCI.IgnoreWanTSP" retries="2" />
+		<TestCase scriptName="TC-1X16.Product.SCI.LargeSciPacket" retries="2" />
+		<TestCase scriptName="TC-1X16.Product.SCI.PortalNoLanMacOperation" retries="2" />
+		<TestCase scriptName="TC-1X16.Product.SCI.PortalReAssociateDuringFlood" retries="2" />
+		<TestCase scriptName="Common.Product.Association.TSPReassociationTimeout.NonPortal" retries="2" />
+		<TestCase scriptName="TC-1X16.Product.SCI.SpeedTest" retries="2" />
+		<TestCase scriptName="TC-1X16.Product.SCI.Throughput" retries="2" />
+		<TestCase scriptName="TC-1X16.Product.SCI.UpVsDown" retries="2" />
+		<TestCase scriptName="TestFramework.Tool.GetHgStats" retries="2" />
+
+		<!--TestCase scriptName="Common.Product.Applications.ssh_cmd" retries="2" /-->
+	</ProductRegression>
+</TestConfig>

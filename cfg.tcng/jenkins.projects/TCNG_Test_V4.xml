@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description>Product C2S Smoke</description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <jenkins.model.BuildDiscarderProperty>
+      <strategy class="hudson.tasks.LogRotator">
+        <daysToKeep>20</daysToKeep>
+        <numToKeep>20</numToKeep>
+        <artifactDaysToKeep>-1</artifactDaysToKeep>
+        <artifactNumToKeep>-1</artifactNumToKeep>
+      </strategy>
+    </jenkins.model.BuildDiscarderProperty>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.FileParameterDefinition>
+          <name>TCNG_BUILD_IMAGE.bin</name>
+          <description>The FW OIV image which will be flashed on the dev_board and tested against.</description>
+        </hudson.model.FileParameterDefinition>
+        <hudson.model.FileParameterDefinition>
+          <name>TCNG_BUILD_QA_TARBALL.tar.gz</name>
+          <description>The built artifacts including TCNG_QA headers/drivers which are all required for QA component testing. </description>
+        </hudson.model.FileParameterDefinition>
+        <hudson.model.ChoiceParameterDefinition>
+          <name>PLATFORM_NAME</name>
+          <description></description>
+          <choices class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+              <string>tcng_at91cap9_tc_1210_rd</string>
+              <string>tcng_at91cap9_tc_1220_rd</string>
+              <string>tcng_at91cap9_tc_1216</string>
+              <string>tcng_at91cap9_pp_1316</string>
+              <string>tcng_at91cap9_pp_1310</string>
+              <string>tcng_at91cap9_e132mb</string>
+            </a>
+          </choices>
+        </hudson.model.ChoiceParameterDefinition>
+        <hudson.model.ChoiceParameterDefinition>
+          <name>TCNG_FW</name>
+          <description></description>
+          <choices class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+              <string>default</string>
+              <string>TCNG_FW1143</string>
+            </a>
+          </choices>
+        </hudson.model.ChoiceParameterDefinition>
+        <hudson.model.ChoiceParameterDefinition>
+          <name>TCNG_BUILD_TYPE</name>
+          <description></description>
+          <choices class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+              <string>latest</string>
+            </a>
+          </choices>
+        </hudson.model.ChoiceParameterDefinition>
+        <hudson.model.ChoiceParameterDefinition>
+          <name>TCNG_TESTSUITE</name>
+          <description>Please select the test suite</description>
+          <choices class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+              <string>I210SmokeTest</string>
+              <string>PP131XSmokeTest</string>
+              <string>PP1310KV2CTest</string>
+              <string>ProductSmokeTest</string>
+              <string>ProductCommonTest</string>
+              <string>ProductRegression</string>
+              <string>TCNGComponentSmokeTest</string>
+              <string>TCNGComponentFullTest</string>
+            </a>
+          </choices>
+        </hudson.model.ChoiceParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>UPSTREAM_BUILD</name>
+          <description></description>
+          <defaultValue></defaultValue>
+        </hudson.model.StringParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <assignedNode>smokey3v4</assignedNode>
+  <canRoam>false</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers>
+    <hudson.triggers.TimerTrigger>
+      <spec>5 */2 * * *</spec>
+    </hudson.triggers.TimerTrigger>
+    <hudson.triggers.SCMTrigger>
+      <spec></spec>
+      <ignorePostCommitHooks>false</ignorePostCommitHooks>
+    </hudson.triggers.SCMTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>whoami
+pwd
+
+
+echo &quot; ******************* $TCNG_FW *****************************&quot;
+
+export TCNG_CFG_DIR=${HOME}/myRepos/net-automation
+export TCNG_PACKAGE_ROOT=${WORKSPACE}/var/workspace/TCNG_Software
+
+echo &quot;Going to decide which platform to be built ...&quot;
+if [ $TCNG_BUILD_TYPE == &quot;PRODUCTION&quot; ]
+then
+   	JENKINS_IMAGE_DIR=production_tcng_jenkins_images       
+else
+	JENKINS_IMAGE_DIR=latest_tcng_jenkins_images
+fi 
+
+export TNT_PLATFORM_NAME=$PLATFORM_NAME
+
+if [ -e TCNG_BUILD_IMAGE.bin ]
+then
+	echo &quot;Going to untar the tarball for testing ... TCNG_BUILD_IMAGE.bin&quot;
+    export FLASH_IMAGE_PATH=TCNG_BUILD_IMAGE.bin
+else
+	echo &quot;No tarball provided, so use the default one ...&quot;
+	export FLASH_IMAGE_PATH=`ls -t /tmp/buildhost/$JENKINS_IMAGE_DIR/$TCNG_FW/${TNT_PLATFORM_NAME}/*.bin | head -1`
+fi
+
+echo &quot;Going to setup the environments for TCNG framework ...&quot;
+source $TCNG_CFG_DIR/cfg.tcng/source_me_first_tcng_env.sh
+
+
+rm -rf var
+QA_TARBALL=&quot;/tmp/buildhost/$JENKINS_IMAGE_DIR/$TCNG_FW/${TNT_PLATFORM_NAME}/tcng_package_qa.tar.gz&quot;
+if [ -e TCNG_BUILD_QA_TARBALL.tar.gz ]
+then
+	echo &quot;Going to untar the tarball for testing ... TCNG_BUILD_QA_TARBALL.tar.gz&quot;    
+	QA_TARBALL=&quot;TCNG_BUILD_QA_TARBALL.tar.gz&quot;
+fi
+tar --atime-preserve -xvf ${QA_TARBALL} &gt; /dev/null
+
+export TCNG_TEST_SUITE=$TCNG_CFG_DIR/cfg.tcng/$TCNG_TESTSUITE.xml
+
+echo &quot;Run the TCNG test ...&quot;
+$TCNG_CFG_DIR/myex.pl --config $TCNG_CFG_DIR/cfg.tcng/TCNG_Test_Only.cfg
+
+
+if [ -e test_reports ]
+then
+	echo &quot;Goging to save the testing logs&quot;
+	test_report_tarball=TCNG_TestResult.tar.gz
+    tar -zcvf ${test_report_tarball} test_reports ${QA_TARBALL}
+    dest_dir=&quot;/tmp/buildhost/$JENKINS_IMAGE_DIR/$TCNG_FW/${TNT_PLATFORM_NAME}/test_reports&quot;
+	echo &quot;Goging to save the testing logs under ${dest_dir} ...&quot;
+    mkdir -p ${dest_dir} &amp;&amp; cp ${test_report_tarball} ${dest_dir}
+fi</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <hudson.tasks.junit.JUnitResultArchiver plugin="junit@1.21">
+      <testResults>**/TC_*.xml</testResults>
+      <keepLongStdio>true</keepLongStdio>
+      <healthScaleFactor>1.0</healthScaleFactor>
+      <allowEmptyResults>false</allowEmptyResults>
+    </hudson.tasks.junit.JUnitResultArchiver>
+  </publishers>
+  <buildWrappers>
+    <hudson.plugins.ws__cleanup.PreBuildCleanup plugin="ws-cleanup@0.34">
+      <deleteDirs>false</deleteDirs>
+      <cleanupParameter></cleanupParameter>
+      <externalDelete></externalDelete>
+    </hudson.plugins.ws__cleanup.PreBuildCleanup>
+  </buildWrappers>
+</project>

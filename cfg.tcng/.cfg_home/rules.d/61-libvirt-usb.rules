@@ -1,0 +1,12 @@
+ACTION=="add", \
+    SUBSYSTEM=="usb", \
+    ATTRS{idVendor}=="03eb", \
+    ATTRS{idProduct}=="6124", \
+    ATTRS{devpath}=="1.1", \
+    RUN+="/usr/bin/virsh attach-device v1 /etc/udev/rules.d/xml/usb_acm_v1.xml"
+ACTION=="remove", \
+    SUBSYSTEM=="usb", \
+    ATTRS{idVendor}=="03eb", \
+    ATTRS{idProduct}=="6124", \
+    ATTRS{devpath}=="1.1", \
+    RUN+="/usr/bin/virsh detach-device v1 /etc/udev/rules.d/xml/usb_acm_v1.xml"

@@ -1,0 +1,359 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <hudson.security.AuthorizationMatrixProperty>
+      <blocksInheritance>true</blocksInheritance>
+      <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Update:jenkins</permission>
+      <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Update:admin</permission>
+      <permission>hudson.model.Run.Delete:jenkins</permission>
+      <permission>hudson.model.Run.Delete:admin</permission>
+      <permission>hudson.model.Item.Workspace:jenkins</permission>
+      <permission>hudson.model.Item.Workspace:admin</permission>
+      <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Delete:jenkins</permission>
+      <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Delete:admin</permission>
+      <permission>com.cloudbees.plugins.credentials.CredentialsProvider.ManageDomains:jenkins</permission>
+      <permission>com.cloudbees.plugins.credentials.CredentialsProvider.ManageDomains:admin</permission>
+      <permission>hudson.model.Run.Replay:jenkins</permission>
+      <permission>hudson.model.Run.Replay:admin</permission>
+      <permission>hudson.model.Item.Configure:jenkins</permission>
+      <permission>hudson.model.Item.Configure:admin</permission>
+      <permission>hudson.model.Item.Cancel:jenkins</permission>
+      <permission>hudson.model.Item.Cancel:admin</permission>
+      <permission>hudson.model.Item.Delete:jenkins</permission>
+      <permission>hudson.model.Item.Delete:admin</permission>
+      <permission>hudson.model.Item.Read:jenkins</permission>
+      <permission>hudson.model.Item.Read:admin</permission>
+      <permission>hudson.model.Item.Read:anonymous</permission>
+      <permission>hudson.model.Item.Read:dtm</permission>
+      <permission>com.cloudbees.plugins.credentials.CredentialsProvider.View:jenkins</permission>
+      <permission>com.cloudbees.plugins.credentials.CredentialsProvider.View:admin</permission>
+      <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Create:jenkins</permission>
+      <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Create:admin</permission>
+      <permission>hudson.model.Item.Build:jenkins</permission>
+      <permission>hudson.model.Item.Build:admin</permission>
+      <permission>hudson.model.Item.Build:dtm</permission>
+      <permission>hudson.scm.SCM.Tag:jenkins</permission>
+      <permission>hudson.scm.SCM.Tag:admin</permission>
+      <permission>hudson.model.Item.Move:jenkins</permission>
+      <permission>hudson.model.Item.Move:admin</permission>
+      <permission>hudson.model.Item.Discover:jenkins</permission>
+      <permission>hudson.model.Item.Discover:admin</permission>
+      <permission>hudson.model.Run.Update:jenkins</permission>
+      <permission>hudson.model.Run.Update:admin</permission>
+    </hudson.security.AuthorizationMatrixProperty>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.FileParameterDefinition>
+          <name>TCNG_BUILD.bin</name>
+          <description>The build image</description>
+        </hudson.model.FileParameterDefinition>
+        <hudson.model.FileParameterDefinition>
+          <name>TCNG_BUILD_QA_TARBALL.tar.gz</name>
+          <description>The built artifacts including both TCNG_Software apps and TCNG_QA headers/drivers which are all required for QA component testing. </description>
+        </hudson.model.FileParameterDefinition>
+        <hudson.model.ChoiceParameterDefinition>
+          <name>TCNG_TESTSUITE</name>
+          <description></description>
+          <choices class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+              <string>TCNGComponentFullTest</string>
+              <string>TCNGComponentSmokeTest</string>
+            </a>
+          </choices>
+        </hudson.model.ChoiceParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>PLATFORM_NAME</name>
+          <description></description>
+          <defaultValue></defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>TCNG_FW</name>
+          <description></description>
+          <defaultValue>default</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>TCNG_BUILD_TYPE</name>
+          <description></description>
+          <defaultValue></defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>TCNG_BUILD_FLAG</name>
+          <description></description>
+          <defaultValue></defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>BUILD_PRIORITY</name>
+          <description></description>
+          <defaultValue></defaultValue>
+        </hudson.model.StringParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <assignedNode>smokey</assignedNode>
+  <canRoam>false</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers>
+    <hudson.triggers.TimerTrigger>
+      <spec></spec>
+    </hudson.triggers.TimerTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>whoami
+pwd
+
+if [ -z &quot;$TCNG_FW&quot; ]; then
+    export TCNG_FW=&quot;TCNG_Nightly_Jenkins_&quot;$( date +%F )
+fi
+
+if [ $TCNG_BUILD_TYPE == &quot;PRODUCTION&quot; ]
+then
+   	JENKINS_IMAGE_DIR=production_tcng_jenkins_images       
+else
+	JENKINS_IMAGE_DIR=latest_tcng_jenkins_images
+fi 
+
+export TNT_PLATFORM_NAME=tcng_at91cap9_e132mb
+
+if [ -e TCNG_BUILD.bin ]
+then
+	echo &quot;Going to untar the tarball for testing ... TCNG_BUILD_TARBALL.tar.gz&quot;
+    export FLASH_IMAGE_PATH=TCNG_BUILD.bin
+else
+	echo &quot;No tarball provided, so use the default one ...&quot;
+	export FLASH_IMAGE_PATH=`ls -t /tmp/buildhost/$JENKINS_IMAGE_DIR/$TCNG_FW/tcng_at91cap9_e132mb/*.bin | head -1`
+fi
+
+echo &quot; ******************* $TCNG_FW *****************************&quot;
+
+export TCNG_PACKAGE_ROOT=${WORKSPACE}/var/workspace/TCNG_Software
+export TCNG_CFG_DIR=${HOME}/workspace/TCNG_QA/ci
+
+echo &quot;Going to setup the environments for TCNG framework ...&quot;
+source $TCNG_CFG_DIR/cfg.tcng/source_me_first_tcng_env.sh
+
+rm -rf var; rm -rf test_reports
+
+if [ -e TCNG_BUILD_QA_TARBALL.tar.gz ]
+then
+	echo &quot;Going to untar the tarball for testing ... TCNG_BUILD_TARBALL.tar.gz&quot;    
+	tar --atime-preserve -zxvf TCNG_BUILD_QA_TARBALL.tar.gz &gt; /tmp/logs/tcng_build_tarball.log 2&gt;&amp;1
+else
+	echo &quot;No tarball provided, so use the default one ...&quot;
+	tar --atime-preserve -xvf /tmp/buildhost/$JENKINS_IMAGE_DIR/$TCNG_FW/tcng_package_qa/&quot;tcng_package_qa_&quot;$BUILD_NUMBER&quot;.tar.gz&quot; &gt; /dev/null
+fi
+
+echo &quot;Goging to set the testsuite: $TCNG_TESTSUITE ...&quot;
+export TCNG_TEST_SUITE=${TNT_TCNG_QA_TOPDIR}/testcases/Common/Component/$TCNG_TESTSUITE/$TCNG_TESTSUITE.xml
+
+echo &quot;Going to flash the testbed and run the test suite ...&quot;
+$TCNG_CFG_DIR/myex.pl --config $TCNG_CFG_DIR/cfg.tcng/TCNG_Test_Only.cfg
+
+
+if [ -e test_reports ]
+then
+	echo &quot;Goging to save the testing logs&quot;
+	test_report_tarball=TCNG_Comp_Full_TestResult.tar.gz
+    tar -zcvf ${test_report_tarball} test_reports
+    dest_dir=&quot;/tmp/buildhost/$JENKINS_IMAGE_DIR/$TCNG_FW/tcng_at91cap9_e132mb/test_reports&quot;
+	echo &quot;Goging to save the testing logs under ${dest_dir} ...&quot;
+    mkdir -p ${dest_dir} &amp;&amp; cp ${test_report_tarball} ${dest_dir}
+fi
+
+# Please replace this with 
+# /workspace/jenkins_run_component_tests.sh</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <hudson.tasks.junit.JUnitResultArchiver plugin="junit@1.21">
+      <testResults>**/TC_*.xml</testResults>
+      <keepLongStdio>true</keepLongStdio>
+      <healthScaleFactor>0.1</healthScaleFactor>
+      <allowEmptyResults>false</allowEmptyResults>
+    </hudson.tasks.junit.JUnitResultArchiver>
+    <hudson.plugins.emailext.ExtendedEmailPublisher plugin="email-ext@2.60">
+      <recipientList>$DEFAULT_RECIPIENTS</recipientList>
+      <configuredTriggers>
+        <hudson.plugins.emailext.plugins.trigger.FailureTrigger>
+          <email>
+            <recipientList>TCNG_notifications_build@tantalus.com</recipientList>
+            <subject>$PROJECT_DEFAULT_SUBJECT</subject>
+            <body>$PROJECT_DEFAULT_CONTENT
+
+This build completed successfully!
+However, some component tests failed....
+
+----------------------------------------------------------------------------------------------
+Full Component Test Results:
+
+- Tests Run:       ${TEST_COUNTS, var=&quot;total&quot;}
+- Tests Passed:  ${TEST_COUNTS, var=&quot;pass&quot;}
+- Tests Failed:    ${TEST_COUNTS, var=&quot;fail&quot;}
+
+Full build and test log can be found here, along with code coverage data:
+${BUILD_URL}
+
+For technical support or other inquiries, contact the Buildmeister:
+Borisa Jevtic &lt;bjevtic@tantalus.com&gt;
+
+-----------------------------------------------------------------------------------------------
+Detailed error output for failed tests:
+
+${FAILED_TESTS, showMessage=0}</body>
+            <recipientProviders>
+              <hudson.plugins.emailext.plugins.recipients.ListRecipientProvider/>
+              <hudson.plugins.emailext.plugins.recipients.CulpritsRecipientProvider/>
+            </recipientProviders>
+            <attachmentsPattern></attachmentsPattern>
+            <attachBuildLog>false</attachBuildLog>
+            <compressBuildLog>false</compressBuildLog>
+            <replyTo>$PROJECT_DEFAULT_REPLYTO</replyTo>
+            <contentType>project</contentType>
+          </email>
+        </hudson.plugins.emailext.plugins.trigger.FailureTrigger>
+        <hudson.plugins.emailext.plugins.trigger.SuccessTrigger>
+          <email>
+            <subject>$PROJECT_DEFAULT_SUBJECT</subject>
+            <body>$PROJECT_DEFAULT_CONTENT
+
+This build completed successfully and passed all component tests!
+
+----------------------------------------------------------------------------------------------
+Full Component Test Results:
+
+- Tests Run:       ${TEST_COUNTS, var=&quot;total&quot;}
+- Tests Passed:  ${TEST_COUNTS, var=&quot;pass&quot;}
+- Tests Failed:    ${TEST_COUNTS, var=&quot;fail&quot;}
+
+Full build and test log can be found here, along with code coverage data:
+${BUILD_URL}
+
+For technical support or other inquiries, contact the Buildmeister:
+Borisa Jevtic &lt;bjevtic@tantalus.com&gt;</body>
+            <recipientProviders>
+              <hudson.plugins.emailext.plugins.recipients.ListRecipientProvider/>
+              <hudson.plugins.emailext.plugins.recipients.CulpritsRecipientProvider/>
+            </recipientProviders>
+            <attachmentsPattern></attachmentsPattern>
+            <attachBuildLog>false</attachBuildLog>
+            <compressBuildLog>false</compressBuildLog>
+            <replyTo>$PROJECT_DEFAULT_REPLYTO</replyTo>
+            <contentType>project</contentType>
+          </email>
+        </hudson.plugins.emailext.plugins.trigger.SuccessTrigger>
+        <hudson.plugins.emailext.plugins.trigger.BuildingTrigger>
+          <email>
+            <recipientList>TCNG_notifications_build@tantalus.com</recipientList>
+            <subject>$PROJECT_DEFAULT_SUBJECT</subject>
+            <body>$PROJECT_DEFAULT_CONTENT
+
+This build completed successfully!
+However, some component tests failed....
+
+----------------------------------------------------------------------------------------------
+Full Component Test Results:
+
+- Tests Run:       ${TEST_COUNTS, var=&quot;total&quot;}
+- Tests Passed:  ${TEST_COUNTS, var=&quot;pass&quot;}
+- Tests Failed:    ${TEST_COUNTS, var=&quot;fail&quot;}
+
+Full build and test log can be found here, along with code coverage data:
+${BUILD_URL}
+
+For technical support or other inquiries, contact the Buildmeister:
+Borisa Jevtic &lt;bjevtic@tantalus.com&gt;
+
+-----------------------------------------------------------------------------------------------
+Detailed error output for failed tests:
+
+${FAILED_TESTS, showMessage=0}</body>
+            <recipientProviders>
+              <hudson.plugins.emailext.plugins.recipients.ListRecipientProvider/>
+              <hudson.plugins.emailext.plugins.recipients.CulpritsRecipientProvider/>
+            </recipientProviders>
+            <attachmentsPattern></attachmentsPattern>
+            <attachBuildLog>false</attachBuildLog>
+            <compressBuildLog>false</compressBuildLog>
+            <replyTo>$PROJECT_DEFAULT_REPLYTO</replyTo>
+            <contentType>project</contentType>
+          </email>
+        </hudson.plugins.emailext.plugins.trigger.BuildingTrigger>
+        <hudson.plugins.emailext.plugins.trigger.FixedTrigger>
+          <email>
+            <subject>$PROJECT_DEFAULT_SUBJECT</subject>
+            <body>$PROJECT_DEFAULT_CONTENT
+
+This build completed successfully and passed all component tests!
+
+----------------------------------------------------------------------------------------------
+Full Component Test Results:
+
+- Tests Run:       ${TEST_COUNTS, var=&quot;total&quot;}
+- Tests Passed:  ${TEST_COUNTS, var=&quot;pass&quot;}
+- Tests Failed:    ${TEST_COUNTS, var=&quot;fail&quot;}
+
+Full build and test log can be found here, along with code coverage data:
+${BUILD_URL}
+
+For technical support or other inquiries, contact the Buildmeister:
+Borisa Jevtic &lt;bjevtic@tantalus.com&gt;
+</body>
+            <recipientProviders>
+              <hudson.plugins.emailext.plugins.recipients.ListRecipientProvider/>
+              <hudson.plugins.emailext.plugins.recipients.CulpritsRecipientProvider/>
+            </recipientProviders>
+            <attachmentsPattern></attachmentsPattern>
+            <attachBuildLog>false</attachBuildLog>
+            <compressBuildLog>false</compressBuildLog>
+            <replyTo>$PROJECT_DEFAULT_REPLYTO</replyTo>
+            <contentType>project</contentType>
+          </email>
+        </hudson.plugins.emailext.plugins.trigger.FixedTrigger>
+      </configuredTriggers>
+      <contentType>default</contentType>
+      <defaultSubject>$DEFAULT_SUBJECT</defaultSubject>
+      <defaultContent>$DEFAULT_CONTENT
+-----------------------------------------------------------------------------------------------
+Upstream Build:  #${UPSTREAM_BUILD}
+Test Suite:           ${TCNG_TESTSUITE}
+Build:                   #${BUILD_NUMBER}
+Build Tag:            ${TCNG_FW}
+Platform Name:    ${PLATFORM_NAME}
+Build Type:           ${TCNG_BUILD_TYPE}
+Build Flags:          Build Trigger:        ${BUILD_CAUSE}
+-----------------------------------------------------------------------------------------------
+
+</defaultContent>
+      <attachmentsPattern></attachmentsPattern>
+      <presendScript>$DEFAULT_PRESEND_SCRIPT</presendScript>
+      <postsendScript>$DEFAULT_POSTSEND_SCRIPT</postsendScript>
+      <attachBuildLog>false</attachBuildLog>
+      <compressBuildLog>false</compressBuildLog>
+      <replyTo>$DEFAULT_REPLYTO</replyTo>
+      <saveOutput>false</saveOutput>
+      <disabled>false</disabled>
+    </hudson.plugins.emailext.ExtendedEmailPublisher>
+  </publishers>
+  <buildWrappers>
+    <com.lookout.jenkins.EnvironmentScript plugin="environment-script@1.2.5">
+      <script>if [ -z &quot;$TCNG_FW&quot; ]; then
+    echo TCNG_FW=&quot;TCNG_Nightly_&quot;$( date +%F )
+fi</script>
+      <scriptType>unixScript</scriptType>
+      <runOnlyOnParent>false</runOnlyOnParent>
+      <hideEnvironmentVariablesValues>false</hideEnvironmentVariablesValues>
+    </com.lookout.jenkins.EnvironmentScript>
+    <org.jenkinsci.plugins.buildnamesetter.BuildNameSetter plugin="build-name-setter@1.6.7">
+      <template>CompTest_Build_#${BUILD_NUMBER}_$TCNG_FW</template>
+      <runAtStart>true</runAtStart>
+      <runAtEnd>false</runAtEnd>
+    </org.jenkinsci.plugins.buildnamesetter.BuildNameSetter>
+  </buildWrappers>
+</project>

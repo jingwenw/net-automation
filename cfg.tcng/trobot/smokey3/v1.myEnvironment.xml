@@ -1,0 +1,51 @@
+<EnvironmentConfig>
+  <!-- My environment which takes priority over the one under the QA repo -->
+    <trobot>
+        <MiddlewareComponentDebug>0</MiddlewareComponentDebug>
+	<BypassPostTest>1</BypassPostTest>
+
+        <!-- TunetComm Configuration -->
+        <TunetCommPorts>
+            <Sci>/dev/ttyUSB.SCI</Sci>
+<!--         <Rf900>/dev/ttyUSB1</Rf900>--> <!-- Has to be the same as QAProxy port-->
+        </TunetCommPorts>
+
+        <!-- Group of Device Connections for Test devices -->
+        <DeviceConnections>
+              <!-- <Socket connectedDevice="Palaven" >   -->
+              <!--  Charris15  -->
+              <Socket connectedDevice="smokey2v1">
+                <Serial0>/dev/ttyUSB.DBG</Serial0>  <!-- Linux Console -->
+                <Serial1>/dev/ttyUSB.QA</Serial1>   <!-- QA Proxy -->
+                <Serial2>/dev/ttyUSB.SCI</Serial2>  <!-- SCI -->
+                <Serial3>/dev/ttyUSB.METRO</Serial3>  <!-- Metrology -->
+                <PowerbarPort Adaptor="240V AC">5</PowerbarPort>
+    		<Rf900Modem>Amazon1</Rf900Modem>  <!-- For product test-->
+             </Socket>
+        </DeviceConnections>
+
+        <!-- Should we automatically publish the results? -->
+        <PublishResults>0</PublishResults>
+
+        <!-- My Linux Box ethernet device name -->
+        <EthernetDeviceName>ens3</EthernetDeviceName>
+	<Locations>
+		<!-- Repositories on my local machine -->
+		<HgRepositoryNative>
+			<TCNG_QA>/home/trobot/workspace/TCNG_QA</TCNG_QA>
+			<ASIC>/var/jenkins/TCNG_Repos_Root/external_repos/TCNG_ASIC</ASIC>
+			<Middleware>/var/jenkins/TCNG_Repos_Root/external_repos/TCNG_Middleware</Middleware>
+			<Platform>/var/jenkins/TCNG_Repos_Root</Platform>
+			<NS>/var/jenkins/TCNG_Repos_Root/external_repos/TUNetSysShared</NS>
+		</HgRepositoryNative>
+                <BuildServerMountPoint>/tmp/buildserver</BuildServerMountPoint>
+		<NfsShare>/tmp/nfs</NfsShare>
+	</Locations>
+        <!-- Automated Power source configuration -->
+        <PowerSource>
+            <type>IPC-400</type>
+            <ipAddress>10.1.0.250</ipAddress>
+        </PowerSource>
+   </trobot>
+
+</EnvironmentConfig>

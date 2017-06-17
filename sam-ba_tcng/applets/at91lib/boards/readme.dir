@@ -1,0 +1,29 @@
+//------------------------------------------------------------------------------
+/// \dir
+/// !Purpose
+/// 
+/// This directory contains one module for each supported board. This includes
+/// evaluation kit (AT91SAM7S-EK, AT91SAM9260-EK, ...) as well as customer-
+/// specific boards (AT91SAM7S-HTC).
+///
+/// Each module provides the necessary definitions and methods for using the
+/// board in a portable way. This means that there should be NO overhead when
+/// porting a project from a SAM7S to a SAM7SE (for example), given that they
+/// both fullfil the technical requirements of the project.
+///
+/// !Architecture
+/// A board module is made up of a number of files:
+/// - board.h: contains board-related definitions.
+/// - board.mak: simple sub-Makefile describing the available memory targets.
+/// - board_memories.h & board_memories.c: functions for manipulating memories 
+///                                        at the board level (i.e. remap, SDRAM
+///                                        initialization, etc.).
+/// - board_cstartup.S: assembly startup file.
+/// - board_lowlevel.c: low-level initialization (clocks, etc.) of the board.
+///
+/// In addition, there is one subdirectory for each supported chip. They
+/// contain:
+/// - }chip}.h: LibV3 header file for the chip.
+/// - }memory}.lds: linker script for a particular memory target.
+//------------------------------------------------------------------------------
+

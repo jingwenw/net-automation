@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<TestConfig>
+
+	<Parameters>
+		<RunLongTestCases>true</RunLongTestCases>
+		<EmailRecipients>jwang@tantalus.com</EmailRecipients>
+		<Iterations>1</Iterations>
+		<!-- Specify which test suite below you wish to run -->
+		<WhichSuite>PP131XSmokeTest</WhichSuite>
+	</Parameters>
+
+	<PP131XSmokeTest>
+		<TestCase scriptName="Common.Product.Configuration.SetBid" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_AD_HOC_SID_001" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_AD_HOC_SID_004" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_AD_HOC_SID_005" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_AD_HOC_SID_006" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_AD_HOC_SID_009" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_AD_HOC_SID_015" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_AD_HOC_SID_019" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_AD_HOC_SID_020" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_AD_HOC_SID_022" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_AD_HOC_SID_023" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_AD_HOC_SID_024" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_ADD-CAL-ENTRY-001" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_ADD-CAL-ENTRY-002" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_ADD-CAL-ENTRY-004" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_BLURT-001" retries="2" />
+
+		<TestCase scriptName="PP-Common.Product.Blurts.BlurtAfterTimeJump" retries="2" />
+
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_COMMON-HEADER-001" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_COMMON-HEADER-002" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_COMMON-HEADER-003" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_COMMON-HEADER-004" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_COMMON-HEADER-005" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_COMMON-HEADER-006" retries="0" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_COMMON-HEADER-007" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_COMMON-HEADER-008" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DEMAND_RESET_EVENT_NOTIF_001" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DEMAND_RESET_EVENT_NOTIF_002" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DEMAND_RESET_EVENT_NOTIF_003" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DEMAND_RESET_EVENT_NOTIF_004" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DEMAND_RESET_EVENT_NOTIF_005" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DEMAND_RESET_EVENT_NOTIF_008" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DEMAND_RESET_EVENT_NOTIF_013" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DEMAND_RESET_EVENT_NOTIF_014" retries="2" />
+		<TestCase scriptName="PP-Common.Product.DemandReset.AllPeaks" retries="2" />
+		<TestCase scriptName="PP-Common.Product.Scheduler.Periodic.Boundaries" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DEMAND_RESET_EVENT_NOTIF_016" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DEMAND_RESET_EVENT_NOTIF_017" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DEMAND_RESET_EVENT_NOTIF_018" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DEMAND_RESET_EVENT_NOTIF_019" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DEMAND_RESET_EVENT_NOTIF_020" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DEMAND_RESET_EVENT_NOTIF_021" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DEMAND_RESET_EVENT_NOTIF_023" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DEMAND_RESET_EVENT_NOTIF_025" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DEMAND_RESET_EVENT_NOTIF_026" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DEMAND_RESET_EVENT_NOTIF_027" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DEMAND_RESET_EVENT_NOTIF_028" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DEMAND_RESET_EVENT_NOTIF_029" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DEMAND_RESET_EVENT_NOTIF_030" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DEMAND_RESET_EVENT_NOTIF_032" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DR-APP-016" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DR-APP-032" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DR-APP-034" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DR-APP-035" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DR-APP-036" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DR-APP-037-1" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DR-APP-037" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DR-APP-038" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DR-APP-039" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DR-APP-040" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DR-APP-044" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DR-APP-046" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DR-APP-047" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DR-APP-049" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DR-APP-051" retries="2" />
+
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DR-APP-056" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DR-APP-057" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_DRST-001" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_FACTORY_DEFAULTS-001" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_GET-CAL-REPORT-001" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_GET-CAL-SUM-001" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_INVALID-TSP" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_LONG_MSG" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_MF-DS-001" retries="0" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_MF-US-001" retries="0" />
+
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_MSG-RETRANSMISSION-003" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_MSG-RETRANSMISSION-004" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_OM-001" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_REQ-SUPERHASH-001" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_REQ-SUPERHASH-002" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SD-ADD-SERVICE-001" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SD-DETAIL-001" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SD-SERVICE-001" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SD-SERVICE-002" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SD-SERVICE-003" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SD-SERVICE-004" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SD-SERVICE-005" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SD-SERVICE-006" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SD-SERVICE-007" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SD-SERVICE-008" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SECURITY_PASSWORD-01" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SECURITY_PASSWORD-02" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SECURITY_PASSWORD-03" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SECURITY_PASSWORD" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SERIAL-001" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SERIAL-002" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SERIAL-004" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SET-EDG-PARAMS-001" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SET-EDG-PARAMS-002" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SET-EDG-PARAMS-003" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SET-EDG-PARAMS-004" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SET-EDG-PARAMS-005" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SET-EDG-PARAMS-006" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SET-EDG-PARAMS-007" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SET-EDG-PARAMS-008" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SET-EDG-PARAMS-009" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SET-EDG-PARAMS-010" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SET-EDG-PARAMS-011" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SET-EDG-PARAMS-012" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SET-EDG-PARAMS-013" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SET-EDG-PARAMS-014" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SET-EDG-PARAMS-015" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SET-EDG-PARAMS-016" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SET-EDG-PARAMS-017" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SET-EDG-PARAMS-018" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SET-EDG-SERVICE-002" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SET-PD-APP-CONF-001" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SET-PD-APP-CONF-002" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SET-PQM-APP-CONF-011" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SET-PQM-APP-CONF-012" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SET-PQM-APP-CONF-013" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SET-PQM-APP-CONF-014" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SET-PQM-APP-CONF-015" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SET-PQM-APP-CONF-016" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SET-PQM-APP-CONF-017" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SET-PQM-APP-CONF-018" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SET-PQM-APP-CONF-019" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_SET-PQM-APP-CONF-020" retries="2" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_UDLV-MSG-001" retries="2" />
+
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_UDLV-MSG-003" retries="0" />
+		<TestCase scriptName="PP-Common.Product.sci.SCI_EDG200_USECASE-DEMAND_RESET_CHANGE-001" retries="2" />
+		<TestCase scriptName="PP-Common.Product.DemandResetTrigger.PriorPeakRecWhOnReset" retries="2" />
+		<TestCase scriptName="PP-Common.Product.OnDemandRequests.PriorPeakRecWhRequest" retries="2" />
+		<TestCase scriptName="PP-Common.Product.OnDemandRequests.ReceivedEnergyRequest" retries="2" />
+		<TestCase scriptName="PP-Common.Product.Blurts.ReceivedEnergyInterval" retries="2" />
+		<TestCase scriptName="PP-Common.Product.TXNR.WhVARhRetrieval" retries="2" />
+		<TestCase scriptName="PP-Common.Product.TXNR.DrReportRetrieval" retries="2" />
+		<TestCase scriptName="PP-Common.Product.TXNR.DemandResetRetrieval" retries="2" />
+		<TestCase scriptName="PP-Common.Product.Passwords.BadMasterPass" retries="2" />
+		<TestCase scriptName="PP-Common.Product.Passwords.BadReaderPass" retries="2" />
+	</PP131XSmokeTest>
+</TestConfig>

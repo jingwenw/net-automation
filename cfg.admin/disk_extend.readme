@@ -23,4 +23,4 @@ resize2fs /dev/vm1-vg/root
 Share file system with host:
 
 mkdir /mnt/HostWorkspace
-mount -t 9p -o trans=virtio,version=9p2000.L /HostWorkspace /mnt/HostWorkspace
+mount -t 9p -o trans=virtio,version=9p2000.L Host_Workspace /mnt/HostWorkspace

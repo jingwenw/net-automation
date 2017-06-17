@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<TestConfig>
+
+	<Parameters>
+		<RunLongTestCases>true</RunLongTestCases>
+		<EmailRecipients>xli@tantalus.com,jtodd@tantalus.com, kfeng@tantalus.com, tscott@tantalus.com, acrawford@tantalus.com, spark@tantalus.com, charris@tantalus.com,  mma@tantalus.com, kbahi@tantalus.com, kchou@tantalus.com, jahmed@tantalus.com</EmailRecipients>
+		<Iterations>1</Iterations>
+		<!-- Specify which test suite below you wish to run -->
+		<WhichSuite>PP1310KV2CTest</WhichSuite>
+	</Parameters>
+
+	<PP1310KV2CTest>
+		<TestCase scriptName="Common.Product.Configuration.SetBid" retries="1" />
+		<TestCase scriptName="PP-1310.Product.sci.SCI_EDG200_AD_HOC_SID_008" retries="1" />
+
+		<TestCase scriptName="PP-1310.Product.sci.SCI_EDG200_DISABLE-ALL-APPS" retries="1" />
+		<TestCase scriptName="PP-1310.Product.sci.SCI_EDG200_ENABLE-ALL-APPS" retries="1" />
+
+		<TestCase scriptName="PP-1310.Product.sci.SCI_EDG200_KV2C_V_SWITCH_CONFIGURATION-001" retries="1" />
+		<TestCase scriptName="PP-1310.Product.sci.SCI_EDG200_KV2C-CONFIG-001" retries="1" />
+		<TestCase scriptName="PP-1310.Product.sci.SCI_EDG200_KV2C-CONFIG-002" retries="1" />
+		<TestCase scriptName="PP-1310.Product.sci.SCI_EDG200_KV2C-CONFIG-003" retries="1" />
+		<TestCase scriptName="PP-1310.Product.sci.SCI_EDG200_KV2C-CONFIG-004" retries="1" />
+		<TestCase scriptName="PP-1310.Product.sci.SCI_EDG200_KV2C-CONFIG-005" retries="1" />
+
+		<TestCase scriptName="PP-1310.Product.sci.SCI_EDG200_SET-KV2C-CONFIG-001" retries="1" />
+		<TestCase scriptName="PP-1310.Product.sci.SCI_EDG200_SET-KV2C-CONFIG-002" retries="1" />
+		<TestCase scriptName="PP-1310.Product.sci.SCI_EDG200_SET-KV2C-CONFIG-003" retries="1" />
+		<TestCase scriptName="PP-1310.Product.sci.SCI_EDG200_SET-KV2C-CONFIG-004" retries="1" />
+		<TestCase scriptName="PP-1310.Product.sci.SCI_EDG200_SET-KV2C-CONFIG-005" retries="1" />
+		<TestCase scriptName="PP-1310.Product.sci.SCI_EDG200_SET-KV2C-CONFIG-006" retries="1" />
+		<TestCase scriptName="PP-1310.Product.sci.SCI_EDG200_SET-KV2C-CONFIG-009" retries="1" />
+		<TestCase scriptName="PP-1310.Product.sci.SCI_EDG200_SET-KV2C-CONFIG-010" retries="1" />
+
+		<TestCase scriptName="TestFramework.Tool.GetHgStats" retries="1" />
+	</PP1310KV2CTest>
+</TestConfig>

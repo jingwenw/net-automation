@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<TestConfig>
+	<Parameters>
+		<RunLongTestCases>true</RunLongTestCases>
+		<Iterations>1</Iterations>
+		<!-- Specify which test suite below you wish to run -->
+		<EmailRecipients>tcng_product_dev@tantalus.com,</EmailRecipients>
+<!--
+		ShortComponentTests: For test running, feel free to edit it.
+		ComponentTests:      For daily running.
+		LongComponentTests:  For weekend running.
+-->
+		<WhichSuite>ComponentFailedTests</WhichSuite>
+
+	</Parameters>
+
+	<!-- ################################################################ -->
+	<!-- ##   Do Not Randomize Tests!! Some run on different products  ## -->
+	<!-- ################################################################ -->
+	<ComponentFailedTests randomize="0">
+
+		<!-- ############################################# -->
+		<!-- ##   These Tests must all be for TC-1216   ## -->
+		<!-- ############################################# -->
+
+		<TestCase scriptName="Common.Component.Platform.SetProductTc1216"/>
+
+		<TestCase scriptName="Common.Component.Apps.ERT.SetOemConfMsgs"/>
+		<TestCase scriptName="Common.Component.Apps.ERT.ErtRedundancy"/>
+
+		<TestCase scriptName="Common.Component.Apps.ERT.Authorize100s"/>
+
+		<TestCase scriptName="Common.Component.Apps.ERT.DiscoveryFrequencies"/>
+
+		<TestCase scriptName="Common.Component.Apps.ERT.Blacklist"/>
+
+		<TestCase scriptName="Common.Component.Apps.ERT.LegacyInterceptTOH"/>
+
+		<TestCase scriptName="Common.Component.Apps.ERT.100sDailyReadFallback"/>
+		<TestCase scriptName="Common.Component.Apps.ERT.InstantTampers"/>
+
+		<TestCase scriptName="Common.Component.Apps.ERT.TimeSync"/>
+	        <TestCase scriptName="Common.Component.Apps.ERT.100sInterceptImpact"/>
+	        <TestCase scriptName="Common.Component.Apps.ERT.DiscoveryCoverage"/>
+	        <TestCase scriptName="Common.Component.Apps.ERT.PortalBlacklist"/>
+	        <TestCase scriptName="Common.Component.Apps.ERT.ClearTables"/>
+
+		<!-- ####################################################### -->
+		<!-- ##   These Tests must all be for TC-1220-RD          ## -->
+		<!-- ####################################################### -->
+	    <TestCase scriptName="Common.Component.Platform.SetProductTc1220Rd"/>
+	    <TestCase scriptName="Common.Component.Apps.ERT.TrackingTableUpdatePersistence"/>
+
+
+</ComponentFailedTests>
+</TestConfig>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<TestConfig>
+  <Parameters>
+    <RunLongTestCases>false</RunLongTestCases>
+    <Iterations>1</Iterations>
+    <TcNameIfPrefixed>1</TcNameIfPrefixed>
+    <!-- Specify which test suite below you wish to run -->
+    <EmailRecipients>tcng_product_dev@tantalus.com,</EmailRecipients>
+    <!--
+        ShortComponentTests: For test running, feel free to edit it.
+        ComponentTests:      For daily running.
+        LongComponentTests:  For weekend running.
+        ComponentSmokeTests: For Component Smoke test running
+    -->
+    <WhichSuite>TCNGBootupTests</WhichSuite>
+
+  </Parameters>
+
+  <TCNGBootupTests randomize="0">
+    <TestCase scriptName="Common.Component.Platform.SetProductTc1216" retries="2"/>
+  </TCNGBootupTests>
+</TestConfig>
