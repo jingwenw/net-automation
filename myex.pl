@@ -490,7 +490,7 @@ sub cfgReplaceVariables {
 
     # Watchdog the long run process
     if (($ret =~ /^MYEX_WATCHDOG.*/) || ($ret =~ /"MYEX_WATCHDOG.*/)) {
-        my ($func, $pattern, $limit) = split (/::/, $ret);
+        my ($func, $pattern, $limit, $recover_cmd) = split (/::/, $ret);
         if ($pattern) {
             my $ps =  "ps -eo pid,ppid,etime,cmd | grep $pattern";
             my @out = `$ps`;
@@ -527,6 +527,7 @@ sub cfgReplaceVariables {
                     my $ts = $t[0] + $t[1] * 60 + $t[2] * 3600 + $t[3] * 86400;
                     if ($ts > $limit) {
                         $cmd .= " echo $pid over limit of $limit; kill -9 $pid; sleep 1; ";
+                        $cmd .= " $recover_cmd; sleep 1; " if ($recover_cmd);
                     } else {
                         $cmd .= " echo $pid is not over limit of $limit: $ts seconds only; ";
                     }

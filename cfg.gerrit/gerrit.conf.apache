@@ -1,0 +1,15 @@
+ProxyPass           /gerrit  http://localhost:8081/gerrit nocanon
+ProxyPassReverse    /gerrit  http://localhost:8081/gerrit nocanon
+ProxyRequests       Off
+
+<Proxy http://localhost:8081/gerrit>
+  Order deny,allow
+  Allow from all
+</Proxy>
+
+<Location /gerrit>
+  AuthType Digest
+  AuthName "gerrit"
+  AuthUserFile /etc/apache2/.htdigest
+  Require valid-user
+</Location>
