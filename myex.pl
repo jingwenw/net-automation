@@ -279,7 +279,10 @@ sub processGroups() {
 
         $grpFile = &PM::MyUtil::trim(`ls $grpFile`); # To-be-debug!!!
         &log ("  Going to include the group $key: $grpFile ...");
-        my %grp_cfg = &readCfgFile($grpFile);
+        my %gcfg1 = &readCfgFile($grpFile);
+	my @gcfg = %gcfg1;
+	push @gcfg, %{$cfg};  # Add the main cfg global variables
+	my %grp_cfg = @gcfg;
         $group{$key}{$::GROUP_KEY_CFG} = \%grp_cfg;
         $group{$key}{$::GROUP_KEY_DESP} = $grpDesp;
         $group{$key}{$::GROUP_KEY_REPORT} =
