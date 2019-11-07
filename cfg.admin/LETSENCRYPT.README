@@ -1,0 +1,9 @@
+Nov 07, 2019:
+=============
+On Ubuntu 18 machine, sis.vancasoft.com, simply run the followings to renew:
+
+certbot-auto renew
+
+
+
+
